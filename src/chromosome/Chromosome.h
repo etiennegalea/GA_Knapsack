@@ -1,28 +1,36 @@
 #pragma once
 
 #include <iostream>
-#include "./Gene.h"
+#include <random>
+#include "../knapsack/Item.h"
 
-using namespace std;
-namespace GA_KnapSack {
+namespace GA_Knapsack {
 
     class Chromosome {
     private:
-        static const int MAX_GENE = 20;
-        Gene* chrom[MAX_GENE]{nullptr};
+
+        static const int MAX_GENE = 10;
+        int chrom[MAX_GENE];
         int fitness;
+        // mersenne twister
+        std::random_device rd;
+        std::mt19937 engine{rd()};
+        std::uniform_int_distribution<int> bin{0,1};
     public:
         Chromosome(){
             fitness = 0;
+            chrom[MAX_GENE] = NULL;
         }
 
-        int getFitness() { return this->fitness; }
-
-        Gene* getChromosome() { return *chrom; }
-
-        void popChromosome_random();
-
         ~Chromosome(){}
+
+        int chromosomeSize() { return MAX_GENE; }
+        void populateChromosome();
+        void printChromosome();
+        void calcChromosomeFitness();
+        int getFitness() { return this->fitness; }
+        int getChromosome(int p_index){ return chrom[p_index]; }
+
     };
 
 }
