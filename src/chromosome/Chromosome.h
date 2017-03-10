@@ -4,13 +4,14 @@
 #include <random>
 #include "../knapsack/Item.h"
 
-namespace GA_Knapsack {
+using std::vector;
 
+namespace GA_Knapsack {
     class Chromosome {
     private:
-
-        static const int MAX_GENE = 10;
-        int chrom[MAX_GENE];
+        static const int MAX_GENE = 20;
+//        int chrom[MAX_GENE];
+        vector<int> chrom;
         int fitness;
         // mersenne twister
         std::random_device rd;
@@ -19,7 +20,6 @@ namespace GA_Knapsack {
     public:
         Chromosome(){
             fitness = 0;
-            chrom[MAX_GENE] = NULL;
         }
 
         ~Chromosome(){}
@@ -28,7 +28,7 @@ namespace GA_Knapsack {
         void populateChromosome();
         void printChromosome();
         void calcChromosomeFitness();
-        int getFitness() { return this->fitness; }
+        int getFitness() { return fitness; }
         int getChromosome(int p_index){ return chrom[p_index]; }
 
     };

@@ -1,48 +1,52 @@
 #pragma once
 
 #include <iostream>
-#include "src/Chromosome/Chromosome.h"
+#include "chromosome/Chromosome.h"
 
-using namespace std;
+using namespace GA_Knapsack;
+using std::vector;
 
 class Population {
 private:
-    Chromosome *pop[100]{nullptr};
-//    Chromosome elite;
-//    float avgFitness;
+    static const int MAX_CHROM = 5;
+    static const int MAX_ELITE = 2;
+
+//    Chromosome* pop[MAX_CHROM]{nullptr};
+    vector<Chromosome*> pop = {nullptr};
+    //    Chromosome* elite[MAX_ELITE];
+    vector<Chromosome*> elite = {nullptr};
+
+    double avgFitness, cumulativeFitness;
+    int chromosomeSize;
+    // mersenne twister PRNG
+    std::random_device rd;
+    std::mt19937 engine{rd()};
+    std::uniform_real_distribution<double> roulette{0,1};
 public:
     Population()
     {
-
+        avgFitness = cumulativeFitness = 0;
+        chromosomeSize = pop.at(0)->chromosomeSize();
     }
 
-    void popPopulation_random();
-    // for max population
-//        for (int i = 0; i < 100; ++i) {
-//            Chromosome c;
-//            c.popChromosome_random();
-//            this->pop[i] = c;
-//        }
-
-
-    void printPopulation();
-//        for (int i = 0; i < 100; ++i) {
-//            cout << this->pop[i] << ": "
-//                 << "value: " << this->pop[i].getChromosome()->getValue()
-//                 << "\tsize: " << this->pop[i].getChromosome()->getSize()
-//                 << endl;
-//        }
-
-
-//    void setPop(Chromosome pop[100]){ this->pop = pop; }
     ~Population()
     {
         Chromosome* temp = nullptr;
-        for(int index = 0; index < 100; index++)
+        for(Chromosome* x : pop)
         {
-            temp = pop[index];
+            temp = x;
             delete temp;
             temp = nullptr;
         }
     }
+
+    Chromosome* getPop(int p_index){ return pop.at(p_index); }
+    void populatePopulation();
+    void printPopulation();
+    void calcPopulationFitness();
+    // sets the elite individuals (according to MAX_ELITE)
+    void getElite();
+    void replaceEliteWithWorst();
+
+    void rouletteSelection();
 };

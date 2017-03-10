@@ -129,28 +129,76 @@ CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o.provides: CMakeFiles/
 CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o.provides.build: CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o
 
 
-CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o: CMakeFiles/GA_Knapsack.dir/flags.make
-CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o: ../src/chromosome/Gene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o -c /home/egalea/Downloads/GA_Knapsack/src/chromosome/Gene.cpp
+CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o: CMakeFiles/GA_Knapsack.dir/flags.make
+CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o: ../src/knapsack/Item.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o -c /home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.cpp
 
-CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/Downloads/GA_Knapsack/src/chromosome/Gene.cpp > CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.i
+CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.cpp > CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.i
 
-CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/Downloads/GA_Knapsack/src/chromosome/Gene.cpp -o CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.s
+CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.cpp -o CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.s
 
-CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o.requires:
+CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o.requires:
 
-.PHONY : CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o.requires
+.PHONY : CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o.requires
 
-CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o.provides: CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o.requires
-	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o.provides.build
-.PHONY : CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o.provides
+CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o.provides: CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o.requires
+	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o.provides.build
+.PHONY : CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o.provides
 
-CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o.provides.build: CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o
+CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o.provides.build: CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o
+
+
+CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o: CMakeFiles/GA_Knapsack.dir/flags.make
+CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o: ../src/Algorithms.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o -c /home/egalea/Downloads/GA_Knapsack/src/Algorithms.cpp
+
+CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/Downloads/GA_Knapsack/src/Algorithms.cpp > CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.i
+
+CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/Downloads/GA_Knapsack/src/Algorithms.cpp -o CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.s
+
+CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o.requires:
+
+.PHONY : CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o.requires
+
+CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o.provides: CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o.requires
+	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o.provides.build
+.PHONY : CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o.provides
+
+CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o.provides.build: CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o
+
+
+CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o: CMakeFiles/GA_Knapsack.dir/flags.make
+CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o: ../src/knapsack/ItemList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o -c /home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.cpp
+
+CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.cpp > CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.i
+
+CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.cpp -o CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.s
+
+CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o.requires:
+
+.PHONY : CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o.requires
+
+CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o.provides: CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o.requires
+	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o.provides.build
+.PHONY : CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o.provides
+
+CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o.provides.build: CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o
 
 
 # Object files for target GA_Knapsack
@@ -158,7 +206,9 @@ GA_Knapsack_OBJECTS = \
 "CMakeFiles/GA_Knapsack.dir/main.cpp.o" \
 "CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o" \
 "CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o" \
-"CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o"
+"CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o" \
+"CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o" \
+"CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o"
 
 # External object files for target GA_Knapsack
 GA_Knapsack_EXTERNAL_OBJECTS =
@@ -166,10 +216,12 @@ GA_Knapsack_EXTERNAL_OBJECTS =
 GA_Knapsack: CMakeFiles/GA_Knapsack.dir/main.cpp.o
 GA_Knapsack: CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o
 GA_Knapsack: CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o
-GA_Knapsack: CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o
+GA_Knapsack: CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o
+GA_Knapsack: CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o
+GA_Knapsack: CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o
 GA_Knapsack: CMakeFiles/GA_Knapsack.dir/build.make
 GA_Knapsack: CMakeFiles/GA_Knapsack.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable GA_Knapsack"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable GA_Knapsack"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GA_Knapsack.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -180,7 +232,9 @@ CMakeFiles/GA_Knapsack.dir/build: GA_Knapsack
 CMakeFiles/GA_Knapsack.dir/requires: CMakeFiles/GA_Knapsack.dir/main.cpp.o.requires
 CMakeFiles/GA_Knapsack.dir/requires: CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o.requires
 CMakeFiles/GA_Knapsack.dir/requires: CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o.requires
-CMakeFiles/GA_Knapsack.dir/requires: CMakeFiles/GA_Knapsack.dir/src/chromosome/Gene.cpp.o.requires
+CMakeFiles/GA_Knapsack.dir/requires: CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o.requires
+CMakeFiles/GA_Knapsack.dir/requires: CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o.requires
+CMakeFiles/GA_Knapsack.dir/requires: CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o.requires
 
 .PHONY : CMakeFiles/GA_Knapsack.dir/requires
 

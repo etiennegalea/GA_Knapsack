@@ -1,16 +1,29 @@
 #include "./Chromosome.h"
-#include "Gene.h"
 
-using namespace GA_KnapSack;
+using namespace GA_Knapsack;
 
-void Chromosome::popChromosome_random(){
+// test solution
+static constexpr int SOLUTION[10] = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1};
+//static constexpr int SOLUTION[10] = {1, 1, 1, 1, 1};
 
-    // for each gene in chromosome
+void Chromosome::populateChromosome(){
+    for (int i = 0; i < MAX_GENE; i++) {
+        chrom.push_back(bin(engine));
+    }
+}
+
+void Chromosome::printChromosome(){
     for (int i = 0; i < MAX_GENE; ++i) {
-        int rValue = rand() % 25 + 1;
-        int rSize = rand() % 10 + 1;
-        Gene* g = new Gene(rValue, rSize);
-        chrom[i] = g;
-        std::cout << g->getSize() << "\t" << g->getValue() << endl;
+        std::cout << " " << getChromosome(i);
+    }
+    std::cout << std::endl;
+}
+
+void Chromosome::calcChromosomeFitness() {
+    fitness = 0;
+    for (int i = 0; i < MAX_GENE; ++i) {
+        if (SOLUTION[i] == chrom.at(i)){
+            fitness++;
+        }
     }
 }
