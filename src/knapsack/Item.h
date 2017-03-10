@@ -4,18 +4,18 @@
 
 using namespace std;
 
-class Gene {
+class Item {
 private:
     int value;
     int size;
 public:
     //Genes will be creates either randomly or by an absolute list
-    Gene(int p_value, int p_size){
+    Item(int p_value, int p_size){
         value = p_value;
         size = p_size;
     }
 
-    ~Gene(){
+    ~Item(){
 
     }
 
