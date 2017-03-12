@@ -1,14 +1,13 @@
 #include "ItemList.h"
 #include "../chromosome/Chromosome.h"
 
-using namespace GA_Knapsack;
 using std::cout;
 using std::endl;
 
 void ItemList::populateList(){
     // for each gene in chromosome
     for (int i = 0; i < MAX_ITEMS; ++i) {
-        list.at(i) = new Item(rValue(engine), rWeight(engine));
+        list.push_back(new Item(rValue(engine), rWeight(engine)));
         std::cout << list.at(i)->getValue() << "\t"
                   << list.at(i)->getWeight() << endl;
     }

@@ -2,12 +2,11 @@
 
 using std::cout;
 using std::endl;
-using namespace GA_Knapsack;
 
 void Population::populatePopulation(){
     Chromosome* c = NULL;
     // for max population
-    for (int i = 0; i < MAX_CHROM; ++i) {
+    for (int i = 0; i < MAX_CHROM; i++) {
         c = new Chromosome();
         c->populateChromosome();
         pop.push_back(c);
@@ -17,24 +16,24 @@ void Population::populatePopulation(){
 void Population::printPopulation(){
     for (int i = 0; i < MAX_CHROM; ++i) {
         cout << "Chromosome " << i << " [" << getPop(i)->getFitness()
-             << "/" << chromosomeSize << "]: ";
+             << "/" << chromosomeSize << "]:\t";
         getPop(i)->printChromosome();
     }
     cout << "\nAverage fitness: " << avgFitness << endl;
 }
 
 void Population::calcPopulationFitness() {
-    cumulativeFitness = avgFitness = 0;
-    for (int i = 0; i < MAX_CHROM; ++i) {
-        pop.at(i)->calcChromosomeFitness();
-        cumulativeFitness += pop.at(i)->getFitness();
+    avgFitness = 0;
+    cumulativeFitness = 0;
+    for(Chromosome *x : pop){
+        x->calcChromosomeFitness();
+        cumulativeFitness += x->getFitness();
     }
     avgFitness = (cumulativeFitness / MAX_CHROM);
 }
 
 void Population::getElite() {
-//    Chromosome* tempChroms[MAX_ELITE]{nullptr};
-    vector<Chromosome*> tempChroms = {nullptr};
+    Chromosome* tempChroms[MAX_ELITE]{nullptr};
     int fittest;
     int skipIndex[MAX_ELITE];
     bool skipIndexFlag;
@@ -43,25 +42,25 @@ void Population::getElite() {
         fittest = 0;
         skipIndex[i] = -1;
         skipIndexFlag = false;
-        for (int index = 0; index < chromosomeSize; ++index) {
+        for (int index = 0; index < MAX_CHROM; ++index) {
             if ((fittest < getPop(index)->getFitness())){
                 // check all skipIndex array elements
                 for (int j = 0; j < i; ++j) {
                     if(skipIndex[j] == index){
                         skipIndexFlag = true;
-                        break;
+//                        break;
                     }
                 }
                 if (skipIndexFlag == false){
                     fittest = getPop(index)->getFitness();
-                    tempChroms.at(i) = getPop(index);
+                    tempChroms[i] = getPop(index);
                     // on next iteration of 'i', it will skip this index
                     skipIndex[i] = index;
                 }
             }
         }
         // store elite at element 'i'
-        elite.at(i) = getPop(skipIndex[i]);
+        elite[i] = getPop(skipIndex[i]);
     }
 }
 
@@ -75,18 +74,18 @@ void Population::replaceEliteWithWorst() {
     bool skipIndexFlag;
     for (int i = 0; i < MAX_ELITE; ++i) {
         unfit = chromosomeSize; // start with max fitness
-        skipIndex[i] = -1;
+        skipIndex[i] = NULL;
         skipIndexFlag = false;
-        for (int index = 0; index < chromosomeSize; ++index) {
+        for (int index = 0; index < MAX_CHROM; ++index) {
             if (unfit > getPop(index)->getFitness()){
                 // check all skipIndex array elements
-                for (int j = 0; j < i; ++j) {
-                    if(skipIndex[j] == index){
+                for (int skipIterator = 0; skipIterator < i; ++skipIterator) {
+                    if(skipIndex[skipIterator] == index){
                         skipIndexFlag = true;
                         break;
                     }
                 }
-                if (skipIndexFlag != false){
+                if (skipIndexFlag){
                     unfit = getPop(index)->getFitness();
                     // on next iteration of 'i', it will skip this index
                     skipIndex[i] = index;
@@ -94,14 +93,21 @@ void Population::replaceEliteWithWorst() {
             }
         }
         // replace elite with individuals with worst fitness
-        pop[skipIndex[i]] = elite.at(i);
+//        pop.at(skipIndex[i]) = elite[i];
     }
 }
 
 void Population::rouletteSelection() {
-    vector<Chromosome*> newPop = {nullptr};
+    vector<Chromosome*> newPop;
     double percentages[MAX_CHROM];
 
+    if(eliteSwitch){
+        replaceEliteWithWorst();
+        for(Chromosome *x : elite)
+            newPop.push_back(x);
+    }
+
+    // also include elite individuals in roulette selection
     for (int index = 0; index < MAX_CHROM; ++index) {
         percentages[index] = (getPop(index)->getFitness() / cumulativeFitness);
 //        cout << percentages.at(index) << " ";
@@ -109,23 +115,28 @@ void Population::rouletteSelection() {
 
     double spin;
     // generating new population via roulette wheel selection
-    for (int i = 0; i < MAX_CHROM; ++i) {
+    for (int i = 0; i < (MAX_CHROM-MAX_ELITE); ++i) {
         spin = roulette(engine);    // roulette spin
         for (int j = 0; j < MAX_CHROM; ++j) {
             spin -= percentages[j];
             if(spin < 0){
-                newPop.at(i) = getPop(j);
+                newPop.push_back(getPop(j));
                 break;
             }
         }
     }
 
-    // print newPop
-    for(int index = 0; index < MAX_CHROM; index++)
-    {
-        pop.at(index) = newPop.at(index);
-    }
-//    calcPopulationFitness();
-//    printPopulation();
+    // replace with newPop
+
+    pop = newPop;
+//    for(int index = 0; index < MAX_CHROM; index++)
+//    {
+//        pop.at(index) = newPop.at(index);
+//    }
+
+//    pop.swap(newPop);
+
+    calcPopulationFitness();
+    printPopulation();
 
 }

@@ -1,6 +1,5 @@
 #include "Algorithms.h"
 
-using namespace GA_Knapsack;
 
 Population Algorithms::rouletteSelection(Population pop) {
 

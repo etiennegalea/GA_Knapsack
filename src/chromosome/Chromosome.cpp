@@ -1,9 +1,9 @@
 #include "./Chromosome.h"
 
-using namespace GA_Knapsack;
 
 // test solution
-static constexpr int SOLUTION[10] = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1};
+static constexpr int SOLUTION[20] = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1};
+//static constexpr int SOLUTION[10] = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1};
 //static constexpr int SOLUTION[10] = {1, 1, 1, 1, 1};
 
 void Chromosome::populateChromosome(){
@@ -22,7 +22,7 @@ void Chromosome::printChromosome(){
 void Chromosome::calcChromosomeFitness() {
     fitness = 0;
     for (int i = 0; i < MAX_GENE; ++i) {
-        if (SOLUTION[i] == chrom.at(i)){
+        if (SOLUTION[i] == getChromosome(i)){
             fitness++;
         }
     }

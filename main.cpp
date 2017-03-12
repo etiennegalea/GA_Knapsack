@@ -25,10 +25,13 @@ int main(){
     pop->calcPopulationFitness();
     pop->printPopulation();
 //    cout << "\n ----- printing whole population -----" << endl;
-//    pop->rouletteSelection();
-    pop->replaceEliteWithWorst();
-    pop->calcPopulationFitness();
-    pop->printPopulation();
+//    pop->replaceEliteWithWorst();
+//    pop->printPopulation();
+
+    pop->rouletteSelection();
+
+//    pop->calcPopulationFitness();
+//    pop->printPopulation();
 
     return 0;
 }

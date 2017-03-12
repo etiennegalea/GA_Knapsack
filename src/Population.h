@@ -2,19 +2,20 @@
 
 #include <iostream>
 #include "chromosome/Chromosome.h"
+#include <vector>
 
-using namespace GA_Knapsack;
 using std::vector;
 
 class Population {
 private:
     static const int MAX_CHROM = 5;
     static const int MAX_ELITE = 2;
+    static const int MAX_GENE = 20;
 
-//    Chromosome* pop[MAX_CHROM]{nullptr};
-    vector<Chromosome*> pop = {nullptr};
-    //    Chromosome* elite[MAX_ELITE];
-    vector<Chromosome*> elite = {nullptr};
+    bool eliteSwitch = true;
+
+    vector<Chromosome*> pop;
+    Chromosome* elite[MAX_ELITE]{nullptr};
 
     double avgFitness, cumulativeFitness;
     int chromosomeSize;
@@ -25,8 +26,9 @@ private:
 public:
     Population()
     {
-        avgFitness = cumulativeFitness = 0;
-        chromosomeSize = pop.at(0)->chromosomeSize();
+        avgFitness = 0;
+        cumulativeFitness = 0;
+        chromosomeSize = MAX_GENE;
     }
 
     ~Population()

@@ -11,6 +11,8 @@ iostream
 -
 chromosome/Chromosome.h
 /home/egalea/Downloads/GA_Knapsack/./src/chromosome/Chromosome.h
+vector
+-
 
 /home/egalea/Downloads/GA_Knapsack/./src/chromosome/Chromosome.h
 iostream
@@ -47,6 +49,8 @@ iostream
 -
 chromosome/Chromosome.h
 /home/egalea/Downloads/GA_Knapsack/src/./chromosome/Chromosome.h
+vector
+-
 
 /home/egalea/Downloads/GA_Knapsack/src/./chromosome/Chromosome.h
 iostream
@@ -83,6 +87,8 @@ iostream
 -
 chromosome/Chromosome.h
 /home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.h
+vector
+-
 
 /home/egalea/Downloads/GA_Knapsack/src/chromosome/./Chromosome.h
 iostream
