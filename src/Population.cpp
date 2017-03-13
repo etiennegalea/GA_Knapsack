@@ -19,7 +19,7 @@ void Population::printPopulation(){
              << "/" << chromosomeSize << "]:\t";
         getPop(i)->printChromosome();
     }
-    cout << "\nAverage fitness: " << avgFitness << endl;
+    cout << "\nAverage fitness: " << avgFitness << "\n" << endl;
 }
 
 void Population::calcPopulationFitness() {
@@ -33,14 +33,14 @@ void Population::calcPopulationFitness() {
 }
 
 void Population::getElite() {
-    Chromosome* tempChroms[MAX_ELITE]{nullptr};
+//    Chromosome* tempChroms[MAX_ELITE]{nullptr};
     int fittest;
     int skipIndex[MAX_ELITE];
     bool skipIndexFlag;
     // iterate through out the list of chromosomes to find elite
     for (int i = 0; i < MAX_ELITE; ++i) {
         fittest = 0;
-        skipIndex[i] = -1;
+        skipIndex[i] = NULL;
         skipIndexFlag = false;
         for (int index = 0; index < MAX_CHROM; ++index) {
             if ((fittest < getPop(index)->getFitness())){
@@ -48,12 +48,12 @@ void Population::getElite() {
                 for (int j = 0; j < i; ++j) {
                     if(skipIndex[j] == index){
                         skipIndexFlag = true;
-//                        break;
+                        break;
                     }
                 }
-                if (skipIndexFlag == false){
+                if (!skipIndexFlag){
                     fittest = getPop(index)->getFitness();
-                    tempChroms[i] = getPop(index);
+//                    tempChroms[i] = getPop(index);
                     // on next iteration of 'i', it will skip this index
                     skipIndex[i] = index;
                 }
@@ -85,15 +85,13 @@ void Population::replaceEliteWithWorst() {
                         break;
                     }
                 }
-                if (skipIndexFlag){
+                if (!skipIndexFlag){
                     unfit = getPop(index)->getFitness();
                     // on next iteration of 'i', it will skip this index
                     skipIndex[i] = index;
                 }
             }
         }
-        // replace elite with individuals with worst fitness
-//        pop.at(skipIndex[i]) = elite[i];
     }
 }
 
@@ -102,21 +100,24 @@ void Population::rouletteSelection() {
     double percentages[MAX_CHROM];
 
     if(eliteSwitch){
-        replaceEliteWithWorst();
+//        replaceEliteWithWorst();
+        getElite();
         for(Chromosome *x : elite)
             newPop.push_back(x);
     }
 
-    // also include elite individuals in roulette selection
+    // also include elite individuals in randomProb selection
     for (int index = 0; index < MAX_CHROM; ++index) {
         percentages[index] = (getPop(index)->getFitness() / cumulativeFitness);
 //        cout << percentages.at(index) << " ";
     }
 
     double spin;
-    // generating new population via roulette wheel selection
-    for (int i = 0; i < (MAX_CHROM-MAX_ELITE); ++i) {
-        spin = roulette(engine);    // roulette spin
+
+    int rouletteSpins = (eliteSwitch) ? (MAX_CHROM - MAX_ELITE) : MAX_CHROM;
+    // generating new population via randomProb wheel selection
+    for (int i = 0; i < rouletteSpins; ++i) {
+        spin = randomProb(engine);    // randomProb spin
         for (int j = 0; j < MAX_CHROM; ++j) {
             spin -= percentages[j];
             if(spin < 0){
@@ -127,16 +128,86 @@ void Population::rouletteSelection() {
     }
 
     // replace with newPop
+    pop = newPop;
+
+//    calcPopulationFitness();
+//    printPopulation();
+}
+
+// traverse population one by one and mate each individual with the next one
+// (last mates with first) if crossover condition is satisfied.
+void Population::crossover() {
+    vector<Chromosome*> newPop;
+    // choose a random point from chromosome and
+    // exchange parts between both parents
+    for (int i = 0; i < pop.size()-1; ++i) {
+        newPop.push_back(singlePointCrossover(pop.at(i), pop.at(i+1)));
+    }
+    // mate last and first parents
+    newPop.push_back(singlePointCrossover(pop.back(), pop.front()));
 
     pop = newPop;
-//    for(int index = 0; index < MAX_CHROM; index++)
-//    {
-//        pop.at(index) = newPop.at(index);
-//    }
-
-//    pop.swap(newPop);
-
-    calcPopulationFitness();
-    printPopulation();
-
 }
+
+Chromosome* Population::singlePointCrossover(Chromosome *p_father, Chromosome *p_mother) {
+    // if crossover condition is satisfied
+    if (randomProb(engine) < CROSSOVER_PROB) {
+        Chromosome *child;
+        int maxSize = 0;
+        // set max boundary for random point
+        maxSize = p_father->getChromosomeSize();
+        // set mersenne twister-based crossover point
+        std::uniform_int_distribution<int> cPoint{1, maxSize};
+        double crossoverPoint = cPoint(engine);
+        for (int j = 0; j < maxSize; ++j) {
+            if (j < crossoverPoint) {
+                // copy gene of first part of parent to child
+                child->setGene(p_father->getGene(j));
+            } else {
+                // copy gene of last part of second parent to child
+                child->setGene(p_mother->getGene(j));
+            }
+        }
+        // push child to new population
+        return child;
+    }else{
+        return p_father;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ayyyyyyyyyyyy lmao page break

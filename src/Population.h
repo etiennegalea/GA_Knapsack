@@ -8,21 +8,24 @@ using std::vector;
 
 class Population {
 private:
-    static const int MAX_CHROM = 5;
-    static const int MAX_ELITE = 2;
-    static const int MAX_GENE = 20;
+    static const bool eliteSwitch = false;
 
-    bool eliteSwitch = true;
+    static const int MAX_CHROM = 50;
+    static const int MAX_ELITE = 1;
+    static const int MAX_GENE = 10;
+    static constexpr double CROSSOVER_PROB = 0.15;
+    static constexpr double MUTATION_PROB = 0.01;
 
     vector<Chromosome*> pop;
     Chromosome* elite[MAX_ELITE]{nullptr};
-
     double avgFitness, cumulativeFitness;
     int chromosomeSize;
+
     // mersenne twister PRNG
     std::random_device rd;
     std::mt19937 engine{rd()};
-    std::uniform_real_distribution<double> roulette{0,1};
+    std::uniform_real_distribution<double> randomProb{0,1};
+    std::uniform_real_distribution<double> mutationRate{0.0, 1.0};
 public:
     Population()
     {
@@ -51,4 +54,6 @@ public:
     void replaceEliteWithWorst();
 
     void rouletteSelection();
+    void crossover();
+    Chromosome* singlePointCrossover(Chromosome *p_father, Chromosome *p_mother);
 };
