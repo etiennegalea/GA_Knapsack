@@ -1,5 +1,4 @@
 #include <iostream>
-#include <zconf.h>
 #include "./src/Population.h"
 #include "./src/knapsack/ItemList.h"
 
@@ -13,7 +12,7 @@ int main(){
     static const bool TERMINATION_BY_TIME = false;
     static const bool TERMINATION_BY_GENERATION = true;
 
-    static const int GENERATION_LIMIT = 10;
+    static const int GENERATION_LIMIT = 3;
 
 //    cout << "Create a population of items (chromosomes)..." << endl;
 //    Population *p = new Population();
@@ -33,18 +32,23 @@ int main(){
 //    pop->calcPopulationFitness();
 //    pop->printPopulation();
 
+
+
     // termination by generation
     if(TERMINATION_BY_GENERATION){
         for (int i = 0; i < GENERATION_LIMIT; i++){
             cout << " ---- Generation: " << i+1 << " ----\n" << endl;
 
             // genetic algorithms (selection, crossover, mutation)
-            pop->calcPopulationFitness();
             pop->rouletteSelection();
-//        pop->printPopulation();
-//            pop->crossover();
-
-            pop->printPopulation();
+                    pop->calcPopulationFitness();
+                    pop->printPopulation();
+            pop->crossover();
+                    pop->calcPopulationFitness();
+                    pop->printPopulation();
+            pop->mutation();
+                    pop->calcPopulationFitness();
+                    pop->printPopulation();
         }
     }
 

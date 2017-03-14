@@ -8,7 +8,7 @@ using std::vector;
 
 class Chromosome {
 private:
-    static const int MAX_GENE = 10;
+    static const int MAX_GENE = 5;
     vector<int> chrom;
     int fitness;
     // mersenne twister
@@ -35,6 +35,7 @@ public:
     int getFitness() { return fitness; }
     int getGene(int p_index){ return chrom.at(p_index); }
     int setGene(int p_value){ chrom.push_back(p_value); }
+    int setGene(int p_index, int p_value){ (chrom.at(p_index) = p_value); }
 
 };
 

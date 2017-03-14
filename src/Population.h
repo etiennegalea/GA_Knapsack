@@ -10,11 +10,11 @@ class Population {
 private:
     static const bool eliteSwitch = false;
 
-    static const int MAX_CHROM = 50;
-    static const int MAX_ELITE = 1;
+    static const int MAX_CHROM = 4;
+    static const int MAX_ELITE = 2;
     static const int MAX_GENE = 10;
-    static constexpr double CROSSOVER_PROB = 0.15;
-    static constexpr double MUTATION_PROB = 0.01;
+    static constexpr double CROSSOVER_PROB = 0.25;
+    static constexpr double MUTATION_PROB = 0.1;
 
     vector<Chromosome*> pop;
     Chromosome* elite[MAX_ELITE]{nullptr};
@@ -55,5 +55,8 @@ public:
 
     void rouletteSelection();
     void crossover();
-    Chromosome* singlePointCrossover(Chromosome *p_father, Chromosome *p_mother);
+    Chromosome* singlePointCrossover(Chromosome* p_father, Chromosome* p_mother);
+    void mutation();
+    Chromosome* singlePointMutation(Chromosome *p_chrom);
+
 };

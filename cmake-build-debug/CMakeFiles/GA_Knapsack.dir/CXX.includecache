@@ -39,8 +39,6 @@ chrono
 /home/egalea/Downloads/GA_Knapsack/main.cpp
 iostream
 -
-zconf.h
--
 ./src/Population.h
 /home/egalea/Downloads/GA_Knapsack/./src/Population.h
 ./src/knapsack/ItemList.h
@@ -81,6 +79,8 @@ Population.h
 /home/egalea/Downloads/GA_Knapsack/src/Population.h
 
 /home/egalea/Downloads/GA_Knapsack/src/Population.cpp
+algorithm
+-
 ./Population.h
 /home/egalea/Downloads/GA_Knapsack/src/./Population.h
 

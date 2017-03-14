@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "./Population.h"
 
 using std::cout;
@@ -137,22 +138,22 @@ void Population::rouletteSelection() {
 // traverse population one by one and mate each individual with the next one
 // (last mates with first) if crossover condition is satisfied.
 void Population::crossover() {
-    vector<Chromosome*> newPop;
+    vector<Chromosome*> crossoverPop;
     // choose a random point from chromosome and
     // exchange parts between both parents
     for (int i = 0; i < pop.size()-1; ++i) {
-        newPop.push_back(singlePointCrossover(pop.at(i), pop.at(i+1)));
+        crossoverPop.push_back(singlePointCrossover(pop.at(i), pop.at(i+1)));
     }
     // mate last and first parents
-    newPop.push_back(singlePointCrossover(pop.back(), pop.front()));
+    crossoverPop.push_back(singlePointCrossover(pop.back(), pop.front()));
 
-    pop = newPop;
+    pop = crossoverPop;
 }
 
 Chromosome* Population::singlePointCrossover(Chromosome *p_father, Chromosome *p_mother) {
     // if crossover condition is satisfied
+    Chromosome *child = new Chromosome();
     if (randomProb(engine) < CROSSOVER_PROB) {
-        Chromosome *child;
         int maxSize = 0;
         // set max boundary for random point
         maxSize = p_father->getChromosomeSize();
@@ -177,10 +178,32 @@ Chromosome* Population::singlePointCrossover(Chromosome *p_father, Chromosome *p
 
 
 
+void Population::mutation() {
+    vector<Chromosome*> mutationPop;
+    for (int chromIndex = 0; chromIndex < pop.size(); ++chromIndex) {
+        if(mutationRate(engine) < MUTATION_PROB){
+            singlePointMutation(pop.at(chromIndex));
+        }
+    }
+
+    // replace population
+    pop = mutationPop;
+}
+
+Chromosome* Population::singlePointMutation(Chromosome *p_chrom) {
+    int maxSize = p_chrom->getChromosomeSize();
+    // set mersenne twister-based mutation point
+    std::uniform_int_distribution<int> mPoint{1, maxSize};
+    int mutationPoint = mPoint(engine);
+    // switch gene at selected point
+    int value = (p_chrom->getGene(mutationPoint) == 0) ? 1 : 0;
+    p_chrom->setGene(mutationPoint, value);
+
+    return p_chrom;
+}
 
 
-
-
+// overload operator= assignment
 
 
 
