@@ -2,21 +2,29 @@
 #include <bits/unique_ptr.h>
 #include "./Population.h"
 
-using std::cout;
-using std::endl;
+
+// solution will be composed of '1's for testing purposes
+string Population::generateSolution() {
+    for (int i = 0; i < MAX_GENE; i++){
+        solution.push_back('1');
+    }
+    return solution;
+}
+
 
 void Population::populatePopulation(){
     Chromosome* c = NULL;
+    solution = generateSolution();
     // for max population
     for (int i = 0; i < MAX_CHROM; i++) {
-        c = new Chromosome();
+        c = new Chromosome(MAX_GENE, solution);
         c->populateChromosome();
         pop.push_back(c);
     }
 }
 
 void Population::printPopulation(){
-    calcPopulationFitness();
+//    calcPopulationFitness();
     int i = 0;
     for(Chromosome* x : pop){
         cout << "Chromosome " << i << " [" << getPop(i)->getFitness()
@@ -187,7 +195,7 @@ void Population::crossover() {
 Chromosome* Population::singlePointCrossover(Chromosome *p_father, Chromosome *p_mother) {
     // if crossover condition is satisfied
 //    auto child = std::unique_ptr<Chromosome>(new Chromosome());
-    Chromosome *child = new Chromosome();
+    Chromosome *child = new Chromosome(MAX_GENE, solution);
     if (randomProb(engine) < CROSSOVER_PROB) {
         int maxSize = 0;
         // set max boundary for random point

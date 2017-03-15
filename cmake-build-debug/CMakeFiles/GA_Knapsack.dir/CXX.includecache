@@ -103,6 +103,8 @@ random
 /home/egalea/Downloads/GA_Knapsack/src/chromosome/knapsack/Item.h
 
 /home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.cpp
+sstream
+-
 ./Chromosome.h
 /home/egalea/Downloads/GA_Knapsack/src/chromosome/./Chromosome.h
 
