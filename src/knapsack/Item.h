@@ -19,6 +19,4 @@ public:
 
     int getValue(){ return value; }
     int getWeight(){ return weight; }
-
-
 };

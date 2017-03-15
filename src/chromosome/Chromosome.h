@@ -11,7 +11,7 @@ class Chromosome {
 private:
     vector<int> chrom;
     int maxGene;
-    int fitness;
+    double fitness;
     string solution;
     // mersenne twister
     std::random_device rd;
@@ -25,8 +25,6 @@ public:
         fitness = 0;
     }
 
-    // overloaded assignment
-
     // destructor
     ~Chromosome(){
 
@@ -36,7 +34,8 @@ public:
     void populateChromosome();
     void printChromosome();
     void calcChromosomeFitness();
-    int getFitness() { return fitness; }
+    double getFitness() { return fitness; }
+    double setFitness(double p_fitness) { fitness = p_fitness; }
     int getGene(int p_index){ return chrom.at(p_index); }
     int setGene(int p_value){ chrom.push_back(p_value); }
     int setGene(int p_index, int p_value){ (chrom.at(p_index) = p_value); }

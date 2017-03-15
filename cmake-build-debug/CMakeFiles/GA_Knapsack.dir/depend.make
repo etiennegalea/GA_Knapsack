@@ -24,6 +24,7 @@ CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o: ../src/chromosome/Ch
 CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o: ../src/knapsack/Item.cpp
 CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o: ../src/knapsack/Item.h
 
+CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o: ../src/Population.h
 CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o: ../src/chromosome/Chromosome.h
 CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o: ../src/knapsack/Item.h
 CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o: ../src/knapsack/ItemList.cpp

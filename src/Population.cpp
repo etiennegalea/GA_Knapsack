@@ -5,7 +5,7 @@
 
 // solution will be composed of '1's for testing purposes
 string Population::generateSolution() {
-    for (int i = 0; i < MAX_GENE; i++){
+    for (int i = 0; i < maxGene; i++){
         solution.push_back('1');
     }
     return solution;
@@ -17,7 +17,7 @@ void Population::populatePopulation(){
     solution = generateSolution();
     // for max population
     for (int i = 0; i < MAX_CHROM; i++) {
-        c = new Chromosome(MAX_GENE, solution);
+        c = new Chromosome(maxGene, solution);
         c->populateChromosome();
         pop.push_back(c);
     }
@@ -28,7 +28,7 @@ void Population::printPopulation(){
     int i = 0;
     for(Chromosome* x : pop){
         cout << "Chromosome " << i << " [" << getPop(i)->getFitness()
-             << "/" << chromosomeSize << "]:\t";
+             << "/" << maxGene << "]:\t";
         getPop(i)->printChromosome();
         i++;
     }
@@ -103,7 +103,7 @@ void Population::replaceWorstWithElite() {
     int skipIndex[MAX_ELITE];
     bool skipIndexFlag;
     for (int i = 0; i < MAX_ELITE; ++i) {
-        unfit = chromosomeSize; // start with max fitness
+        unfit = maxGene; // start with max fitness
         skipIndex[i] = -1;
         skipIndexFlag = false;
         for (int index = 0; index < MAX_CHROM; ++index) {
@@ -129,7 +129,7 @@ void Population::replaceWorstWithElite() {
 
 
 void Population::rouletteSelection() {
-    calcPopulationFitness();
+//    calcPopulationFitness();
     getElite();
 
     vector<Chromosome*> newPop;
@@ -195,11 +195,11 @@ void Population::crossover() {
 Chromosome* Population::singlePointCrossover(Chromosome *p_father, Chromosome *p_mother) {
     // if crossover condition is satisfied
 //    auto child = std::unique_ptr<Chromosome>(new Chromosome());
-    Chromosome *child = new Chromosome(MAX_GENE, solution);
+    Chromosome *child = new Chromosome(maxGene, solution);
     if (randomProb(engine) < CROSSOVER_PROB) {
         int maxSize = 0;
         // set max boundary for random point
-        maxSize = MAX_GENE;
+        maxSize = maxGene;
         // set mersenne twister-based crossover point
         std::uniform_int_distribution<int> cPoint{1, maxSize};
         double crossoverPoint = cPoint(engine);
@@ -242,7 +242,7 @@ void Population::mutation() {
 }
 
 Chromosome* Population::singlePointMutation(Chromosome *p_chrom) {
-    int maxSize = MAX_GENE-1;
+    int maxSize = maxGene-1;
     // set mersenne twister-based mutation point
     std::uniform_int_distribution<int> mPoint{1, maxSize};
     int mutationPoint = mPoint(engine);

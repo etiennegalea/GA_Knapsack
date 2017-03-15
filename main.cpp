@@ -12,33 +12,33 @@ int main(){
     static const bool TERMINATION_BY_TIME = false;
     static const bool TERMINATION_BY_GENERATION = true;
 
-    static const int GENERATION_LIMIT = 2000;
+    static const int GENERATION_LIMIT = 100;
 
-//    cout << "Create a population of items (chromosomes)..." << endl;
-//    Population *p = new Population();
-//    p->populatePopulation();
-//    cout << "OK... Printing random generated population..." << endl;
-//    p->printPopulation();
 
-    ItemList* item = new ItemList();
-//    cout << "create random list of items in 'itemlist'" << endl;
-//    item->populateList();
-//    cout << "\n----- printing items -----" << endl;
-//    item->printList();
-    Population* pop = new Population();
+    ItemList* items = new ItemList();
+    cout << "create random list of items in 'itemlist'" << endl;
+    items->populateList();
+    cout << "\n----- printing items -----" << endl;
+    items->printList();
 
+
+    Population* pop = new Population(items->getMaxItems());
     cout << "\n ----- populating population with random chromosomes -----" << endl;
     pop->populatePopulation();
 
 
     int maxGeneCount = pop->getMaxGeneCount();
-    double acceptableSolutionLimit = (pop->getMaxGeneCount() - (pop->getMaxGeneCount() * 0.05));
+//    double acceptableSolutionLimit = (pop->getMaxGeneCount() - (pop->getMaxGeneCount() * 0.05));
+    double acceptableSolutionLimit = (items->getKnapsackMaxWeight() - (items->getKnapsackMaxWeight() * 0.05));
     double maxFitness;
 
+    pop = items->calcPopulationFitness(pop);
     // termination by generation
     if(TERMINATION_BY_GENERATION || TERMINATION_BY_FITNESS){
-        for (int i = 0; i < GENERATION_LIMIT; i++){
-            cout << "Generation: " << i+1 << " -- ";
+        for (int i = 1; i < GENERATION_LIMIT+1; i++){
+            // calculate fitness of population
+//            pop->printPopulation();
+            cout << "Generation: " << i << " -- ";
             cout << "max fitness found: " << maxFitness << endl;
             // genetic algorithms (selection, crossover, mutation)
             pop->rouletteSelection();
@@ -47,17 +47,23 @@ int main(){
             pop->mutation();
 
 //            pop->printPopulation();
+            pop = items->calcPopulationFitness(pop);
 
             maxFitness = pop->getBestChromFound()->getFitness();
-//            if(maxFitness < acceptableSolutionLimit){
-            if(maxFitness >= acceptableSolutionLimit){
-
-                cout << "Fitness [" << maxFitness
+//            if(maxFitness >= acceptableSolutionLimit){
+//                cout << "Fitness [" << maxFitness
+//                     << "] found at generation: "
+//                     << i << "\n" << endl;
+//                pop->getBestChromFound()->printChromosome();
+//                 print best chromosome Log
+//                items->printBestChromosomeLog();
+//                break;
+//            }
+//            if(i == GENERATION_LIMIT)
+                cout << "\nFitness [" << maxFitness
                      << "] found at generation: "
                      << i << endl;
-                pop->getBestChromFound()->printChromosome();
-                break;
-            }
+//
         }
     }
 

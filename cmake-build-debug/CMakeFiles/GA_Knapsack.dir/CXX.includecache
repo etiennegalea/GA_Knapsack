@@ -29,12 +29,10 @@ iostream
 /home/egalea/Downloads/GA_Knapsack/./src/knapsack/ItemList.h
 Item.h
 /home/egalea/Downloads/GA_Knapsack/./src/knapsack/Item.h
-random
--
-functional
--
-chrono
--
+../chromosome/Chromosome.h
+/home/egalea/Downloads/GA_Knapsack/./src/chromosome/Chromosome.h
+../Population.h
+/home/egalea/Downloads/GA_Knapsack/./src/Population.h
 
 /home/egalea/Downloads/GA_Knapsack/main.cpp
 iostream
@@ -127,16 +125,12 @@ iostream
 /home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.cpp
 ItemList.h
 /home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.h
-../chromosome/Chromosome.h
-/home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.h
 
 /home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.h
 Item.h
 /home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.h
-random
--
-functional
--
-chrono
--
+../chromosome/Chromosome.h
+/home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.h
+../Population.h
+/home/egalea/Downloads/GA_Knapsack/src/Population.h
 

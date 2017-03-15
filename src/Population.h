@@ -14,18 +14,17 @@ private:
     static const bool eliteSwitch = true;
 
     static const int MAX_CHROM = 50;
-    static const int MAX_ELITE = 1;
-    static const int MAX_GENE = 20;
-    static constexpr double CROSSOVER_PROB = 0.25;
-    static constexpr double MUTATION_PROB = 0.15;
-
+    static const int MAX_ELITE = 2;
+    static constexpr double CROSSOVER_PROB = 0.8;
+    static constexpr double MUTATION_PROB = 0.1;
     string solution;
 
     vector<Chromosome*> pop;
+    int maxGene;
+
     Chromosome *elite[MAX_ELITE]{nullptr};
     Chromosome *bestChrom;
     double avgFitness, cumulativeFitness;
-    int chromosomeSize;
 
     // mersenne twister PRNG
     std::random_device rd;
@@ -34,11 +33,11 @@ private:
     std::uniform_real_distribution<double> mutationRate{0.0, 1.0};
 
 public:
-    Population() {
+    Population(int p_maxGene) {
         solution = {};
         avgFitness = 0;
         cumulativeFitness = 0;
-        chromosomeSize = MAX_GENE;
+        maxGene = p_maxGene;
     }
 
     ~Population() {
@@ -54,6 +53,7 @@ public:
 
     void populatePopulation();
     void printPopulation();
+    vector<Chromosome*> getPopulation() { return pop; }
 
     void calcPopulationFitness();
 
@@ -70,7 +70,7 @@ public:
     void mutation();
     Chromosome *singlePointMutation(Chromosome *p_chrom);
 
-    int getMaxGeneCount() { return MAX_GENE; }
+    int getMaxGeneCount() { return maxGene; }
     Chromosome *getBestChromFound();
 
     string generateSolution();
