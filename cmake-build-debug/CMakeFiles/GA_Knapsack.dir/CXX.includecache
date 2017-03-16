@@ -9,6 +9,8 @@
 /home/egalea/Downloads/GA_Knapsack/./src/Population.h
 iostream
 -
+fstream
+-
 chromosome/Chromosome.h
 /home/egalea/Downloads/GA_Knapsack/./src/chromosome/Chromosome.h
 vector
@@ -44,6 +46,8 @@ iostream
 
 /home/egalea/Downloads/GA_Knapsack/src/./Population.h
 iostream
+-
+fstream
 -
 chromosome/Chromosome.h
 /home/egalea/Downloads/GA_Knapsack/src/./chromosome/Chromosome.h
@@ -86,6 +90,8 @@ bits/unique_ptr.h
 
 /home/egalea/Downloads/GA_Knapsack/src/Population.h
 iostream
+-
+fstream
 -
 chromosome/Chromosome.h
 /home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.h

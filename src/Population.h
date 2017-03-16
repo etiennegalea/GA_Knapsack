@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <fstream>
 #include "chromosome/Chromosome.h"
 #include <vector>
 
@@ -11,10 +12,10 @@ using std::endl;
 
 class Population {
 private:
-    static const bool eliteSwitch = true;
+    static const bool eliteBeforeCrossover = false;
 
     static const int MAX_CHROM = 50;
-    static const int MAX_ELITE = 2;
+    static const int MAX_ELITE = 1;
     static constexpr double CROSSOVER_PROB = 0.8;
     static constexpr double MUTATION_PROB = 0.1;
     string solution;
@@ -22,7 +23,7 @@ private:
     vector<Chromosome*> pop;
     int maxGene;
 
-    Chromosome *elite[MAX_ELITE]{nullptr};
+    Chromosome *elite[MAX_ELITE];
     Chromosome *bestChrom;
     double avgFitness, cumulativeFitness;
 
@@ -75,4 +76,8 @@ public:
 
     string generateSolution();
     string getSolution() { return solution; }
+
+
+
+    void writePopulationToFile();
 };

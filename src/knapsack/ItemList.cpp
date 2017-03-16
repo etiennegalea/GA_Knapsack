@@ -37,32 +37,45 @@ Population* ItemList::calcPopulationFitness(Population *pop)
     vector<int> temp;
 
     for (Chromosome* x : pop->getPopulation()){
-        totalValue = 0;
-        totalWeight = 0;
-        fitness = 0;
-        for (int i = 0; i < MAX_ITEMS; ++i) {
-            // if item selected in individual
-            if(x->getGene(i) == 1){
-                // add value and weight to total
-                totalValue += list.at(i)->getValue();
-                totalWeight += list.at(i)->getWeight();
-                temp.push_back(i);
+        do{
+            totalValue = totalWeight = fitness = 0;
+            overweightFlag = false;
+            for (int i = 0; i < MAX_ITEMS; ++i) {
+                // if item selected in individual
+                if(x->getGene(i) == 1){
+                    // add value and weight to total
+                    totalValue += list.at(i)->getValue();
+                    totalWeight += list.at(i)->getWeight();
+                    temp.push_back(i);
+                    if(totalWeight > KNAPSACK_MAX_WEIGHT){
+                        overweightFlag = true;
+                        break;
+                    }
+                }
             }
-        }
 
-        // fitness function
-        // Since weight is the priority, it is assigned a weighting of '2',
-        // while value is assigned a weighting of '1'
-        fitness = 2*(1/(1+fabs(KNAPSACK_MAX_WEIGHT - totalWeight))) + 1*(1/(1+maxValueOfItemList-totalValue));
+            if (overweightFlag){
+                // randomize chromosome
+                x->removeItemFromChromosome();
+            }else{
+                // fitness function
+                // Since weight is the priority, it is assigned a weighting of '2',
+                // while value is assigned a weighting of '1'
+//        fitness = 2*(1/(1+fabs(KNAPSACK_MAX_WEIGHT - totalWeight))) + 1*(1/(1+maxValueOfItemList-totalValue));
+//                fitness = 2*(1/(1+fabs(KNAPSACK_MAX_WEIGHT - totalWeight))) + 1*(1/(totalValue));
 
-        if( bestFitness < fitness){
-            bestChromLog.chrom = x;
-            bestChromLog.maxValue = totalValue;
-            bestChromLog.maxWeight = totalWeight;
-            bestChromLog.itemList = temp;
-        }
-        temp.clear();
-        x->setFitness(fitness);
+                fitness = totalValue;
+
+                if(bestFitness < fitness){
+                    bestChromLog.chrom = x;
+                    bestChromLog.maxValue = totalValue;
+                    bestChromLog.maxWeight = totalWeight;
+                    bestChromLog.itemList = temp;
+                }
+                temp.clear();
+                x->setFitness(fitness);
+            }
+        }while(overweightFlag);
     }
     vector<int>().swap(temp); // clear allocated memory
     return pop;

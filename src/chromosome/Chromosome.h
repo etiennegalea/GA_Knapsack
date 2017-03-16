@@ -16,7 +16,7 @@ private:
     // mersenne twister
     std::random_device rd;
     std::mt19937 engine{rd()};
-    std::uniform_int_distribution<int> bin{0,1};
+    std::uniform_int_distribution<int> binary{0,1};
 public:
     // constructor
     Chromosome(int p_maxGene, string p_solution){
@@ -32,7 +32,8 @@ public:
 
 //    int getChromosomeSize() { return chrom.size(); }
     void populateChromosome();
-    void printChromosome();
+    void removeItemFromChromosome();
+    string getChromosome();
     void calcChromosomeFitness();
     double getFitness() { return fitness; }
     double setFitness(double p_fitness) { fitness = p_fitness; }

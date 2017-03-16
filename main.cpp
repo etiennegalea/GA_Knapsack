@@ -12,7 +12,7 @@ int main(){
     static const bool TERMINATION_BY_TIME = false;
     static const bool TERMINATION_BY_GENERATION = true;
 
-    static const int GENERATION_LIMIT = 1000;
+    static const int GENERATION_LIMIT = 100;
 
 
     ItemList* items = new ItemList();
@@ -29,6 +29,7 @@ int main(){
     Population* pop = new Population(items->getMaxItems());
     cout << "\n ----- populating population with random chromosomes -----" << endl;
     pop->populatePopulation();
+    pop->writePopulationToFile();
 
 
     int maxGeneCount = pop->getMaxGeneCount();
@@ -47,16 +48,18 @@ int main(){
             // genetic algorithms (selection, crossover, mutation)
             pop->rouletteSelection();
             pop->crossover();
+            pop->elitism();
             pop->mutation();
 
-//            pop->printPopulation();
+            pop->printPopulation();
+
             pop = items->calcPopulationFitness(pop);
             maxFitness = pop->getBestChromFound()->getFitness();
 //            if(maxFitness >= acceptableSolutionLimit){
 //                cout << "Fitness [" << maxFitness
 //                     << "] found at generation: "
 //                     << i << "\n" << endl;
-//                pop->getBestChromFound()->printChromosome();
+//                pop->getBestChromFound()->getChromosome();
 //                 print best chromosome Log
 //                items->printBestChromosomeLog();
 //                break;

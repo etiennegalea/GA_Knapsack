@@ -6,9 +6,9 @@
 
 class ItemList {
 private:
-    static const int KNAPSACK_MAX_WEIGHT = 100;
+    static const int KNAPSACK_MAX_WEIGHT = 7;
 
-    static const int MAX_ITEMS = 400; //corresponds to maxGene
+    static const int MAX_ITEMS = 5; //corresponds to maxGene
     static const int MIN_VALUE_PER_ITEM = 8;
     static const int MAX_VALUE_PER_ITEM = 20;
     static const int MIN_WEIGHT_PER_ITEM = 1;

@@ -29,7 +29,7 @@ void Population::printPopulation(){
     for(Chromosome* x : pop){
         cout << "Chromosome " << i << " [" << getPop(i)->getFitness()
              << "/" << maxGene << "]:\t";
-        getPop(i)->printChromosome();
+        cout << getPop(i)->getChromosome() << endl;
         i++;
     }
     cout << "\nAverage fitness: " << avgFitness << "\n" << endl;
@@ -59,22 +59,21 @@ Chromosome* Population::getBestChromFound(){
 
 // insert elite in population
 void Population::elitism(){
-    if(eliteSwitch){
-//        replaceWorstWithElite();
-        for (Chromosome* x : elite){
-            pop.push_back(x);
-        }
-    }
+    replaceWorstWithElite();
+//    for (Chromosome* x : elite){
+//        pop.push_back(x);
+//    }
 }
 
+// find the best individuals from the population (best fitness)
 void Population::getElite() {
-    int fittest;
+    double fittest;
     int skipIndex[MAX_ELITE];
     bool skipIndexFlag;
     // iterate through out the list of chromosomes to find elite
     for (int i = 0; i < MAX_ELITE; ++i) {
         fittest = 0;
-        skipIndex[i] = NULL;
+        skipIndex[i] = MAX_CHROM + 1;   // set value out of bounds
         skipIndexFlag = false;
         for (int index = 0; index < MAX_CHROM; ++index) {
             if ((fittest < getPop(index)->getFitness())){
@@ -97,9 +96,9 @@ void Population::getElite() {
     }
 }
 
-// find individuals with least fitness
+// find the worst individuals from the population (least fitness)
 void Population::replaceWorstWithElite() {
-    int unfit;
+    double unfit;
     int skipIndex[MAX_ELITE];
     bool skipIndexFlag;
     for (int i = 0; i < MAX_ELITE; ++i) {
@@ -129,14 +128,15 @@ void Population::replaceWorstWithElite() {
 
 
 void Population::rouletteSelection() {
+    vector<Chromosome*> newPop;
+    double percentages[MAX_CHROM];
+    int rouletteSpins = (eliteBeforeCrossover) ? (MAX_CHROM - MAX_ELITE) : MAX_CHROM;
+//    int rouletteSpins = MAX_CHROM - MAX_ELITE;
+
     calcPopulationFitness();
     getElite();
 
-    vector<Chromosome*> newPop;
-    double percentages[MAX_CHROM];
-    int rouletteSpins = (eliteSwitch) ? (MAX_CHROM - MAX_ELITE) : MAX_CHROM;
-
-    if(eliteSwitch){
+    if(eliteBeforeCrossover){
 //        replaceWorstWithElite();
         for (Chromosome* x : elite){
             newPop.push_back(x);
@@ -144,13 +144,8 @@ void Population::rouletteSelection() {
     }
 
     // also include elite individuals in randomProb selection
-    double tempF = 0;
     for (int index = 0; index < MAX_CHROM; ++index) {
-        tempF = (pop.at(index)->getFitness() / cumulativeFitness);
-//        if (tempF == NULL || tempF < 0){
-//            tempF = 0;
-//        }
-        percentages[index] = tempF;
+        percentages[index] = (pop.at(index)->getFitness() / cumulativeFitness);
     }
 
     double spin;
@@ -184,7 +179,7 @@ void Population::crossover() {
     // choose a random point from chromosome and
     // exchange parts between both parents
 
-    for (int i = 0; i < pop.size()-1; ++i) {
+    for (int i = 0; i < MAX_CHROM-1; i++) {
         newPop.push_back(singlePointCrossover(pop.at(i), pop.at(i+1)));
     }
     // mate last and first parents
@@ -228,8 +223,6 @@ Chromosome* Population::singlePointCrossover(Chromosome *p_father, Chromosome *p
 
 void Population::mutation() {
     vector<Chromosome*> newPop;
-    for (int chromIndex = 0; chromIndex < pop.size(); ++chromIndex) {
-    }
     for (Chromosome* x : pop){
         if(mutationRate(engine) < MUTATION_PROB){
             newPop.push_back(singlePointMutation(x));
@@ -258,9 +251,32 @@ Chromosome* Population::singlePointMutation(Chromosome *p_chrom) {
     return p_chrom;
 }
 
+void Population::writePopulationToFile(){
 
-// overload operator= assignment
+    // get time/date as string
+    time_t rawtime;
+    struct tm * timeinfo;
+    char buffer[80];
 
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+
+    strftime(buffer, sizeof(buffer),"%d-%m-%Y_%I.%M.%S",timeinfo);
+    std::string date(buffer);
+
+    // concatenate string date/time with file name
+    string fileName = "population_";
+    string nameDateFile = fileName + date + ".txt";
+
+    // write to file
+    std::ofstream file (nameDateFile);
+    if(file.is_open()){
+        for(Chromosome* x : pop){
+            file << x->getChromosome() << endl;
+        }
+        file.close();
+    }
+}
 
 
 
