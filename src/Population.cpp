@@ -41,7 +41,7 @@ void Population::calcPopulationFitness() {
     int maxChrom = 0;
     for(Chromosome *x : pop){
         maxChrom++;
-        x->calcChromosomeFitness();
+//        x->calcChromosomeFitness();
         cumulativeFitness += x->getFitness();
     }
     avgFitness = (cumulativeFitness / maxChrom);
@@ -129,7 +129,7 @@ void Population::replaceWorstWithElite() {
 
 
 void Population::rouletteSelection() {
-//    calcPopulationFitness();
+    calcPopulationFitness();
     getElite();
 
     vector<Chromosome*> newPop;
@@ -144,8 +144,13 @@ void Population::rouletteSelection() {
     }
 
     // also include elite individuals in randomProb selection
+    double tempF = 0;
     for (int index = 0; index < MAX_CHROM; ++index) {
-        percentages[index] = (pop.at(index)->getFitness() / cumulativeFitness);
+        tempF = (pop.at(index)->getFitness() / cumulativeFitness);
+//        if (tempF == NULL || tempF < 0){
+//            tempF = 0;
+//        }
+        percentages[index] = tempF;
     }
 
     double spin;

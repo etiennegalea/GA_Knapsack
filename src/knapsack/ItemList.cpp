@@ -9,6 +9,15 @@ void ItemList::populateList(){
     }
 }
 
+// based on KNAPSACK_MAX_WEIGHT = 50kg
+void ItemList::populateTestList(){
+    list.push_back(new Item(6, 5));
+    list.push_back(new Item(12, 7));
+    list.push_back(new Item(17, 11));
+    list.push_back(new Item(50, 32));
+    list.push_back(new Item(75, 45));
+}
+
 void ItemList::printList(){
     std::cout << "---- ITEMS IN LIST ----" << endl;
     for (int item = 0; item < MAX_ITEMS; ++item) {
@@ -22,37 +31,35 @@ void ItemList::printList(){
 Population* ItemList::calcPopulationFitness(Population *pop)
 {
     double bestFitness = 0;
-    double fitness;
-    int totalWeight;
+    double fitness, calculatedWeight;
+    double totalValue, totalWeight;
     bool overweightFlag = false;
     vector<int> temp;
 
     for (Chromosome* x : pop->getPopulation()){
+        totalValue = 0;
         totalWeight = 0;
         fitness = 0;
         for (int i = 0; i < MAX_ITEMS; ++i) {
             // if item selected in individual
             if(x->getGene(i) == 1){
-                if ((totalWeight + list.at(i)->getWeight()) <= KNAPSACK_MAX_WEIGHT){
-                    // add value and weight to total
-                    fitness += list.at(i)->getValue();
-                    totalWeight += list.at(i)->getWeight();
-                    temp.push_back(i);
-                }else{
-                    overweightFlag = true;
-                }
+                // add value and weight to total
+                totalValue += list.at(i)->getValue();
+                totalWeight += list.at(i)->getWeight();
+                temp.push_back(i);
             }
         }
-        if(!overweightFlag){
-            fitness -= fabs(totalWeight - KNAPSACK_MAX_WEIGHT);
-            if( bestFitness < fitness){
-                bestChromLog.chrom = x;
-                bestChromLog.maxValue = fitness;
-                bestChromLog.maxWeight = totalWeight;
-                bestChromLog.itemList = temp;
-            }
-        }else{
-            fitness = 0;
+
+        // fitness function
+        // Since weight is the priority, it is assigned a weighting of '2',
+        // while value is assigned a weighting of '1'
+        fitness = 2*(1/(1+fabs(KNAPSACK_MAX_WEIGHT - totalWeight))) + 1*(1/(1+maxValueOfItemList-totalValue));
+
+        if( bestFitness < fitness){
+            bestChromLog.chrom = x;
+            bestChromLog.maxValue = totalValue;
+            bestChromLog.maxWeight = totalWeight;
+            bestChromLog.itemList = temp;
         }
         temp.clear();
         x->setFitness(fitness);
@@ -76,8 +83,12 @@ void ItemList::printBestChromosomeLog()
 }
 
 
-
-
+void ItemList::calculateMaxValue() {
+    maxValueOfItemList = 0;
+    for (Item* i : list){
+        maxValueOfItemList += i->getValue();
+    }
+}
 
 
 

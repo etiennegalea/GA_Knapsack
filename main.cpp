@@ -17,7 +17,11 @@ int main(){
 
     ItemList* items = new ItemList();
     cout << "create random list of items in 'itemlist'" << endl;
+//    items->populateTestList();
     items->populateList();
+
+    items->calculateMaxValue();
+
     cout << "\n----- printing items -----" << endl;
     items->printList();
 
@@ -43,12 +47,10 @@ int main(){
             // genetic algorithms (selection, crossover, mutation)
             pop->rouletteSelection();
             pop->crossover();
-//            pop->elitism();
             pop->mutation();
 
 //            pop->printPopulation();
             pop = items->calcPopulationFitness(pop);
-
             maxFitness = pop->getBestChromFound()->getFitness();
 //            if(maxFitness >= acceptableSolutionLimit){
 //                cout << "Fitness [" << maxFitness
@@ -65,6 +67,7 @@ int main(){
                      << i << endl;
 //
         }
+        items->printBestChromosomeLog();
     }
 
     return 0;

@@ -13,16 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab0d5c07-8c8c-4022-b54c-f12bcdb51896" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/GA_Knapsack" afterPath="$PROJECT_DIR$/cmake-build-debug/GA_Knapsack" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/GA_Knapsack" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GA_Knapsack.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GA_Knapsack.dir/CXX.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GA_Knapsack.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GA_Knapsack.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GA_Knapsack.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/GA_Knapsack.dir/depend.make" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Population.cpp" afterPath="$PROJECT_DIR$/src/Population.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Population.h" afterPath="$PROJECT_DIR$/src/Population.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chromosome/Chromosome.h" afterPath="$PROJECT_DIR$/src/chromosome/Chromosome.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/knapsack/Item.h" afterPath="$PROJECT_DIR$/src/knapsack/Item.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/knapsack/ItemList.cpp" afterPath="$PROJECT_DIR$/src/knapsack/ItemList.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/knapsack/ItemList.h" afterPath="$PROJECT_DIR$/src/knapsack/ItemList.h" />
     </list>
@@ -42,14 +36,14 @@
     <favorites_list name="GA_Knapsack" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.52805537">
+    <splitter split-orientation="horizontal" split-proportion="0.5334358">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="421">
-                  <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+                <state relative-caret-position="357">
+                  <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#19#0" expanded="true" />
                   </folding>
@@ -60,8 +54,8 @@
           <file leaf-file-name="Population.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Population.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="64">
-                  <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+                <state relative-caret-position="442">
+                  <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
                   <folding>
                     <element signature="e#14#33#0" expanded="true" />
                   </folding>
@@ -72,8 +66,8 @@
           <file leaf-file-name="Chromosome.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/chromosome/Chromosome.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="265">
-                  <caret line="32" column="54" lean-forward="true" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+                <state relative-caret-position="289">
+                  <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
                   <folding>
                     <element signature="e#14#33#0" expanded="true" />
                   </folding>
@@ -81,11 +75,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ItemList.h" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ItemList.h" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/knapsack/ItemList.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                <state relative-caret-position="136">
+                  <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
                   <folding>
                     <element signature="e#14#31#0" expanded="true" />
                   </folding>
@@ -100,12 +94,11 @@
           <file leaf-file-name="Population.cpp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Population.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="171" column="39" lean-forward="true" selection-start-line="171" selection-start-column="39" selection-end-line="171" selection-end-column="39" />
+                <state relative-caret-position="-1022">
+                  <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
-                    <element signature="e#911#1211#0" expanded="false" />
-                    <element signature="e#2649#3706#0" expanded="false" />
+                    <element signature="e#2651#3708#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -115,7 +108,7 @@
             <entry file="file://$PROJECT_DIR$/src/chromosome/Chromosome.cpp">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="306">
-                  <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+                  <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -126,8 +119,8 @@
           <file leaf-file-name="ItemList.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/knapsack/ItemList.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-153">
-                  <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+                <state relative-caret-position="27">
+                  <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -156,6 +149,8 @@
       <find>solution</find>
       <find>new</find>
       <find>new chrom</find>
+      <find>&lt; 0</find>
+      <find>cumul</find>
     </findStrings>
     <replaceStrings>
       <replace>GA_Knapsack</replace>
@@ -192,12 +187,12 @@
         <option value="$PROJECT_DIR$/src/Algorithms.cpp" />
         <option value="$PROJECT_DIR$/src/chromosome/Chromosome.cpp" />
         <option value="$PROJECT_DIR$/src/knapsack/Item.h" />
-        <option value="$PROJECT_DIR$/src/Population.cpp" />
         <option value="$PROJECT_DIR$/src/Population.h" />
         <option value="$PROJECT_DIR$/src/chromosome/Chromosome.h" />
-        <option value="$PROJECT_DIR$/src/knapsack/ItemList.h" />
-        <option value="$PROJECT_DIR$/src/knapsack/ItemList.cpp" />
+        <option value="$PROJECT_DIR$/src/Population.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/src/knapsack/ItemList.cpp" />
+        <option value="$PROJECT_DIR$/src/knapsack/ItemList.h" />
       </list>
     </option>
   </component>
@@ -526,7 +521,9 @@
       <workItem from="1489495962327" duration="10181000" />
       <workItem from="1489514945485" duration="14257000" />
       <workItem from="1489533990651" duration="1915000" />
-      <workItem from="1489583159779" duration="21328000" />
+      <workItem from="1489583159779" duration="21414000" />
+      <workItem from="1489618148716" duration="281000" />
+      <workItem from="1489658509132" duration="9182000" />
     </task>
     <task id="LOCAL-00001" summary="implemented automatic solution generation (according to MAX_GENE)">
       <created>1489587054716</created>
@@ -535,11 +532,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489587054716</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="implemented fitness calculation according to knapsack&#10;(many errors, tears, and sads to come)">
+      <created>1489617488488</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1489617488488</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173871000" />
+    <option name="totallyTimeSpent" value="183420000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -559,18 +563,18 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.39910313" sideWeight="0.5" order="11" side_tool="false" content_ui="combo" x="1370" y="829" width="534" height="251" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289777" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.38863975" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1366" y="24" width="1920" height="1056" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.38863975" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1366" y="24" width="1920" height="1056" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -602,14 +606,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="implemented automatic solution generation (according to MAX_GENE)" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented automatic solution generation (according to MAX_GENE)" />
+    <MESSAGE value="implemented fitness calculation according to knapsack&#10;(many errors, tears, and sads to come)" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented fitness calculation according to knapsack&#10;(many errors, tears, and sads to come)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="192" />
+      <option name="time" value="196" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -620,8 +625,7 @@
           <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <element signature="e#911#1211#0" expanded="false" />
-            <element signature="e#2649#3706#0" expanded="false" />
+            <element signature="e#2651#3708#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -686,8 +690,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <element signature="e#911#1211#0" expanded="false" />
-            <element signature="e#2649#3706#0" expanded="false" />
+            <element signature="e#2651#3708#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -769,8 +772,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <element signature="e#911#1211#0" expanded="false" />
-            <element signature="e#2649#3706#0" expanded="false" />
+            <element signature="e#2651#3708#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -912,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,28 +921,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/chromosome/Chromosome.h">
+    <entry file="file://$PROJECT_DIR$/src/Population.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="32" column="54" lean-forward="true" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+        <state relative-caret-position="442">
+          <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
           <folding>
             <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Population.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="171" column="39" lean-forward="true" selection-start-line="171" selection-start-column="39" selection-end-line="171" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <element signature="e#911#1211#0" expanded="false" />
-            <element signature="e#2649#3706#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -949,17 +937,56 @@
     <entry file="file://$PROJECT_DIR$/src/chromosome/Chromosome.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Population.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1022">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#2651#3708#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chromosome/Chromosome.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding>
+            <element signature="e#14#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="802" column="0" lean-forward="false" selection-start-line="802" selection-start-column="0" selection-end-line="802" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/knapsack/ItemList.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
           <folding>
             <element signature="e#14#31#0" expanded="true" />
           </folding>
@@ -968,37 +995,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/knapsack/ItemList.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        <state relative-caret-position="27">
+          <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="823" column="0" lean-forward="false" selection-start-line="823" selection-start-column="0" selection-end-line="823" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Population.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
