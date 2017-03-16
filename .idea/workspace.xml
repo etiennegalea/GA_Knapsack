@@ -12,12 +12,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab0d5c07-8c8c-4022-b54c-f12bcdb51896" name="Default" comment="changed parameters, added a temp file for extra code">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/temp.txt" />
+    <list default="true" id="ab0d5c07-8c8c-4022-b54c-f12bcdb51896" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/GA_Knapsack" afterPath="$PROJECT_DIR$/cmake-build-debug/GA_Knapsack" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/knapsack/ItemList.h" afterPath="$PROJECT_DIR$/src/knapsack/ItemList.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -518,7 +515,7 @@
       <workItem from="1489618148716" duration="281000" />
       <workItem from="1489658509132" duration="10813000" />
       <workItem from="1489674525652" duration="11000" />
-      <workItem from="1489680275238" duration="150000" />
+      <workItem from="1489680275238" duration="171000" />
     </task>
     <task id="LOCAL-00001" summary="implemented automatic solution generation (according to MAX_GENE)">
       <created>1489587054716</created>
@@ -541,11 +538,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489671013470</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="changed parameters, added a temp file for extra code">
+      <created>1489680431761</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1489680431761</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185212000" />
+    <option name="totallyTimeSpent" value="185233000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
