@@ -1,0 +1,40 @@
+
+    // get time/date as string
+    time_t rawtime;
+    struct tm * timeinfo;
+    char buffer[80];
+
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+
+    strftime(buffer, sizeof(buffer),"%d-%m-%Y_%I.%M.%S",timeinfo);
+    std::string date(buffer);
+
+
+    // concatenate string date/time with file name
+    string fileName = "example";
+    string catfileName = fileName + date + ".txt";
+
+    // write to file
+    ofstream myfile_write (catfileName);
+    if(myfile_write.is_open()){
+        for (int i = 10; i < 20; i++){
+            myfile_write << " [" << i << "] This is another!" << endl;
+        }
+        myfile_write.close();
+    }
+
+    // read from file
+    string line;
+    ifstream myfile_read("example.txt");
+    if(myfile_read.is_open()){
+        while(getline(myfile_read, line)){
+            cout << line << '\n';
+        }
+        myfile_read.close();
+    }else{
+        cout << "unable to open file";
+    }
+
+
+

@@ -12,7 +12,7 @@ int main(){
     static const bool TERMINATION_BY_TIME = false;
     static const bool TERMINATION_BY_GENERATION = true;
 
-    static const int GENERATION_LIMIT = 100;
+    static const int GENERATION_LIMIT = 1000;
 
 
     ItemList* items = new ItemList();
