@@ -27,3 +27,6 @@
 *.exe
 *.out
 *.app
+cmake-build-debug/CMakeFiles/3.6.3/CMakeRCCompiler.cmake
+cmake-build-debug/CMakeFiles/GA_Knapsack.dir/linklibs.rsp
+cmake-build-debug/CMakeFiles/GA_Knapsack.dir/objects1.rsp
