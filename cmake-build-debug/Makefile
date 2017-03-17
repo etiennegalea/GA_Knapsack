@@ -150,33 +150,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/Algorithms.o: src/Algorithms.cpp.o
-
-.PHONY : src/Algorithms.o
-
-# target to build an object file
-src/Algorithms.cpp.o:
-	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o
-.PHONY : src/Algorithms.cpp.o
-
-src/Algorithms.i: src/Algorithms.cpp.i
-
-.PHONY : src/Algorithms.i
-
-# target to preprocess a source file
-src/Algorithms.cpp.i:
-	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.i
-.PHONY : src/Algorithms.cpp.i
-
-src/Algorithms.s: src/Algorithms.cpp.s
-
-.PHONY : src/Algorithms.s
-
-# target to generate assembly for a file
-src/Algorithms.cpp.s:
-	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.s
-.PHONY : src/Algorithms.cpp.s
-
 src/Population.o: src/Population.cpp.o
 
 .PHONY : src/Population.o
@@ -297,9 +270,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/Algorithms.o"
-	@echo "... src/Algorithms.i"
-	@echo "... src/Algorithms.s"
 	@echo "... src/Population.o"
 	@echo "... src/Population.i"
 	@echo "... src/Population.s"

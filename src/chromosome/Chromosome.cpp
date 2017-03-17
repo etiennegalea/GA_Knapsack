@@ -17,14 +17,6 @@ string Chromosome::getChromosome(){
     return genes;
 }
 
-void Chromosome::calcChromosomeFitness() {
-    fitness = 0;
-    for (int i = 0; i < maxGene; ++i) {
-        if ((solution.at(i) - 48) == getGene(i)){
-            fitness++;
-        }
-    }
-}
 
 void Chromosome::removeItemFromChromosome() {
     vector<int> temp;
@@ -44,17 +36,3 @@ void Chromosome::removeItemFromChromosome() {
     // unallocated memory for temp vector
     vector<int>().swap(temp);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// sakfgks

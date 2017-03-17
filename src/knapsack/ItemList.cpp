@@ -2,14 +2,14 @@
 
 void ItemList::populateList(){
     // for each gene in chromosome
-    for (int i = 0; i < MAX_ITEMS; ++i) {
+    for (int i = 0; i < maxItems; ++i) {
         list.push_back(new Item(rValue(engine), rWeight(engine)));
 //        std::cout << list.at(i)->getValue() << "\t"
 //                  << list.at(i)->getWeight() << endl;
     }
 }
 
-// based on KNAPSACK_MAX_WEIGHT = 50kg
+// based on maxKnapsackWeight = 50kg
 void ItemList::populateTestList(){
     list.push_back(new Item(6, 5));
     list.push_back(new Item(12, 7));
@@ -20,7 +20,7 @@ void ItemList::populateTestList(){
 
 void ItemList::printList(){
     std::cout << "---- ITEMS IN LIST ----" << endl;
-    for (int item = 0; item < MAX_ITEMS; ++item) {
+    for (int item = 0; item < maxItems; ++item) {
         std::cout << item << ":\t";
         std::cout << "€" << list.at(item)->getValue()
                   << "\t\t" << list.at(item)->getWeight() << "kg"
@@ -40,14 +40,14 @@ Population* ItemList::calcPopulationFitness(Population *pop)
         do{
             totalValue = totalWeight = fitness = 0;
             overweightFlag = false;
-            for (int i = 0; i < MAX_ITEMS; ++i) {
+            for (int i = 0; i < maxItems; ++i) {
                 // if item selected in individual
                 if(x->getGene(i) == 1){
                     // add value and weight to total
                     totalValue += list.at(i)->getValue();
                     totalWeight += list.at(i)->getWeight();
                     temp.push_back(i);
-                    if(totalWeight > KNAPSACK_MAX_WEIGHT){
+                    if(totalWeight > maxKnapsackWeight){
                         overweightFlag = true;
                         break;
                     }
@@ -61,8 +61,8 @@ Population* ItemList::calcPopulationFitness(Population *pop)
                 // fitness function
                 // Since weight is the priority, it is assigned a weighting of '2',
                 // while value is assigned a weighting of '1'
-//        fitness = 2*(1/(1+fabs(KNAPSACK_MAX_WEIGHT - totalWeight))) + 1*(1/(1+maxValueOfItemList-totalValue));
-//                fitness = 2*(1/(1+fabs(KNAPSACK_MAX_WEIGHT - totalWeight))) + 1*(1/(totalValue));
+//        fitness = 2*(1/(1+fabs(maxKnapsackWeight - totalWeight))) + 1*(1/(1+maxValueOfItemList-totalValue));
+//                fitness = 2*(1/(1+fabs(maxKnapsackWeight - totalWeight))) + 1*(1/(totalValue));
 
                 fitness = totalValue;
 

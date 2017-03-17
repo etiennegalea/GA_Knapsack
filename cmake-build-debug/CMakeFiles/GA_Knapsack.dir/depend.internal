@@ -7,12 +7,6 @@ CMakeFiles/GA_Knapsack.dir/main.cpp.o
  /home/egalea/Downloads/GA_Knapsack/./src/knapsack/Item.h
  /home/egalea/Downloads/GA_Knapsack/./src/knapsack/ItemList.h
  /home/egalea/Downloads/GA_Knapsack/main.cpp
-CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o
- /home/egalea/Downloads/GA_Knapsack/src/Algorithms.cpp
- /home/egalea/Downloads/GA_Knapsack/src/Algorithms.h
- /home/egalea/Downloads/GA_Knapsack/src/Population.h
- /home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.h
- /home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.h
 CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o
  /home/egalea/Downloads/GA_Knapsack/src/./Population.h
  /home/egalea/Downloads/GA_Knapsack/src/./chromosome/Chromosome.h

@@ -12,10 +12,18 @@ int main(){
     static const bool TERMINATION_BY_TIME = false;
     static const bool TERMINATION_BY_GENERATION = true;
 
-    static const int GENERATION_LIMIT = 100;
+    static const int FITNESS_LIMIT = 700;
+    static const int TIME_LIMIT = 20000;
+    static const int GENERATION_LIMIT = 500;
 
+    static const int MAX_KNAPSACK_WEIGHT = 10;
+    static const int MAX_ITEMS = 500;
+    static const int MAX_CHROM = 50;
+    static const int MAX_ELITE = 2;
+    static constexpr double CROSSOVER_PROB = 0.8;
+    static constexpr double MUTATION_PROB = 0.1;
 
-    ItemList* items = new ItemList();
+    ItemList* items = new ItemList(MAX_KNAPSACK_WEIGHT, MAX_ITEMS);
     cout << "create random list of items in 'itemlist'" << endl;
 //    items->populateTestList();
     items->populateList();
@@ -26,7 +34,7 @@ int main(){
     items->printList();
 
 
-    Population* pop = new Population(items->getMaxItems());
+    Population* pop = new Population(MAX_ITEMS, MAX_CHROM, MAX_ELITE, CROSSOVER_PROB, MUTATION_PROB);
     cout << "\n ----- populating population with random chromosomes -----" << endl;
     pop->populatePopulation();
     pop->writePopulationToFile();
@@ -48,10 +56,10 @@ int main(){
             // genetic algorithms (selection, crossover, mutation)
             pop->rouletteSelection();
             pop->crossover();
-            pop->elitism();
             pop->mutation();
+            pop->elitism();
 
-            pop->printPopulation();
+//            pop->printPopulation();
 
             pop = items->calcPopulationFitness(pop);
             maxFitness = pop->getBestChromFound()->getFitness();
@@ -64,12 +72,10 @@ int main(){
 //                items->printBestChromosomeLog();
 //                break;
 //            }
-//            if(i == GENERATION_LIMIT)
-                cout << "\nFitness [" << maxFitness
-                     << "] found at generation: "
-                     << i << endl;
-//
+            cout << "\nFitness [" << maxFitness;
+            cout << "] found at generation: " << i << endl;
         }
+        items->printList();
         items->printBestChromosomeLog();
     }
 

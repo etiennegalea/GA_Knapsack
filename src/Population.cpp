@@ -3,32 +3,21 @@
 #include "./Population.h"
 
 
-// solution will be composed of '1's for testing purposes
-string Population::generateSolution() {
-    for (int i = 0; i < maxGene; i++){
-        solution.push_back('1');
-    }
-    return solution;
-}
-
-
 void Population::populatePopulation(){
     Chromosome* c = NULL;
-    solution = generateSolution();
     // for max population
-    for (int i = 0; i < MAX_CHROM; i++) {
-        c = new Chromosome(maxGene, solution);
+    for (int i = 0; i < maxChrom; i++) {
+        c = new Chromosome(maxGene);
         c->populateChromosome();
         pop.push_back(c);
     }
 }
 
 void Population::printPopulation(){
-//    calcPopulationFitness();
     int i = 0;
     for(Chromosome* x : pop){
         cout << "Chromosome " << i << " [" << getPop(i)->getFitness()
-             << "/" << maxGene << "]:\t";
+             << "]: ";
         cout << getPop(i)->getChromosome() << endl;
         i++;
     }
@@ -41,7 +30,6 @@ void Population::calcPopulationFitness() {
     int maxChrom = 0;
     for(Chromosome *x : pop){
         maxChrom++;
-//        x->calcChromosomeFitness();
         cumulativeFitness += x->getFitness();
     }
     avgFitness = (cumulativeFitness / maxChrom);
@@ -60,22 +48,21 @@ Chromosome* Population::getBestChromFound(){
 // insert elite in population
 void Population::elitism(){
     replaceWorstWithElite();
-//    for (Chromosome* x : elite){
-//        pop.push_back(x);
-//    }
 }
 
 // find the best individuals from the population (best fitness)
 void Population::getElite() {
     double fittest;
-    int skipIndex[MAX_ELITE];
+    int skipIndex[maxElite];
     bool skipIndexFlag;
+
+    elite.clear();
     // iterate through out the list of chromosomes to find elite
-    for (int i = 0; i < MAX_ELITE; ++i) {
+    for (int i = 0; i < maxElite; ++i) {
         fittest = 0;
-        skipIndex[i] = MAX_CHROM + 1;   // set value out of bounds
+        skipIndex[i] = NULL;   // set value out of bounds
         skipIndexFlag = false;
-        for (int index = 0; index < MAX_CHROM; ++index) {
+        for (int index = 0; index < maxChrom; ++index) {
             if ((fittest < getPop(index)->getFitness())){
                 // check all skipIndex array elements
                 for (int j = 0; j < i; ++j) {
@@ -92,20 +79,20 @@ void Population::getElite() {
             }
         }
         // store elite at element 'i'
-        elite[i] = getPop(skipIndex[i]);
+        elite.push_back(getPop(skipIndex[i]));
     }
 }
 
 // find the worst individuals from the population (least fitness)
 void Population::replaceWorstWithElite() {
     double unfit;
-    int skipIndex[MAX_ELITE];
+    int skipIndex[maxElite];
     bool skipIndexFlag;
-    for (int i = 0; i < MAX_ELITE; ++i) {
+    for (int i = 0; i < maxElite; ++i) {
         unfit = maxGene; // start with max fitness
-        skipIndex[i] = -1;
+        skipIndex[i] = NULL;
         skipIndexFlag = false;
-        for (int index = 0; index < MAX_CHROM; ++index) {
+        for (int index = 0; index < maxChrom; ++index) {
             if (unfit > getPop(index)->getFitness()){
                 // check all skipIndex array elements
                 for (int skipIterator = 0; skipIterator < i; ++skipIterator) {
@@ -122,16 +109,16 @@ void Population::replaceWorstWithElite() {
             }
         }
         // replace worst with elite
-        pop.at(skipIndex[i]) = elite[i];
+        pop.at(skipIndex[i]) = elite.at(i);
     }
 }
 
 
 void Population::rouletteSelection() {
     vector<Chromosome*> newPop;
-    double percentages[MAX_CHROM];
-    int rouletteSpins = (eliteBeforeCrossover) ? (MAX_CHROM - MAX_ELITE) : MAX_CHROM;
-//    int rouletteSpins = MAX_CHROM - MAX_ELITE;
+    double percentages[maxChrom];
+//    int rouletteSpins = (eliteBeforeCrossover) ? maxChrom : (maxChrom - maxElite);
+//    int rouletteSpins = maxChrom - maxElite;
 
     calcPopulationFitness();
     getElite();
@@ -144,15 +131,15 @@ void Population::rouletteSelection() {
     }
 
     // also include elite individuals in randomProb selection
-    for (int index = 0; index < MAX_CHROM; ++index) {
+    for (int index = 0; index < maxChrom; ++index) {
         percentages[index] = (pop.at(index)->getFitness() / cumulativeFitness);
     }
 
     double spin;
     // generating new population via randomProb wheel selection
-    for (int i = 0; i < rouletteSpins; ++i) {
+    for (int i = 0; i < maxChrom; ++i) {
         spin = randomProb(engine);    // randomProb spin
-        for (int j = 0; j < MAX_CHROM; ++j) {
+        for (int j = 0; j < maxChrom; ++j) {
             spin -= percentages[j];
             if(spin < 0){
                 newPop.push_back(getPop(j));
@@ -178,8 +165,8 @@ void Population::crossover() {
     vector<Chromosome*> newPop;
     // choose a random point from chromosome and
     // exchange parts between both parents
-
-    for (int i = 0; i < MAX_CHROM-1; i++) {
+//    int chromosomeCount = (eliteBeforeCrossover) ? (maxChrom-2) : (maxChrom-maxElite-2);   // back() offset
+    for (int i = 0; i < maxChrom-1; i++) {
         newPop.push_back(singlePointCrossover(pop.at(i), pop.at(i+1)));
     }
     // mate last and first parents
@@ -195,8 +182,8 @@ void Population::crossover() {
 Chromosome* Population::singlePointCrossover(Chromosome *p_father, Chromosome *p_mother) {
     // if crossover condition is satisfied
 //    auto child = std::unique_ptr<Chromosome>(new Chromosome());
-    Chromosome *child = new Chromosome(maxGene, solution);
-    if (randomProb(engine) < CROSSOVER_PROB) {
+    Chromosome *child = new Chromosome(maxGene);
+    if (randomProb(engine) < crossoverProb) {
         int maxSize = 0;
         // set max boundary for random point
         maxSize = maxGene;
@@ -224,7 +211,7 @@ Chromosome* Population::singlePointCrossover(Chromosome *p_father, Chromosome *p
 void Population::mutation() {
     vector<Chromosome*> newPop;
     for (Chromosome* x : pop){
-        if(mutationRate(engine) < MUTATION_PROB){
+        if(mutationRate(engine) < mutationProb){
             newPop.push_back(singlePointMutation(x));
         }else{
             newPop.push_back(x);
@@ -277,27 +264,3 @@ void Population::writePopulationToFile(){
         file.close();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ayyyyyyyyyyyy lmao page break
