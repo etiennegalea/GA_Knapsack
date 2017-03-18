@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <fstream>
 #include "chromosome/Chromosome.h"
 #include <vector>
 
@@ -11,19 +12,17 @@ using std::endl;
 
 class Population {
 private:
-    static const bool eliteSwitch = true;
+    static const bool eliteBeforeCrossover = false;
 
-    static const int MAX_CHROM = 50;
-    static const int MAX_ELITE = 2;
-    static constexpr double CROSSOVER_PROB = 0.8;
-    static constexpr double MUTATION_PROB = 0.1;
-    string solution;
+    int maxGene;
+    int maxChrom;
+    int maxElite;
+    double crossoverProb;
+    double mutationProb;
 
     vector<Chromosome*> pop;
-    int maxGene;
-
-    Chromosome *elite[MAX_ELITE]{nullptr};
-    Chromosome *bestChrom;
+    vector<Chromosome*> elite;
+    Chromosome* bestChrom;
     double avgFitness, cumulativeFitness;
 
     // mersenne twister PRNG
@@ -33,11 +32,14 @@ private:
     std::uniform_real_distribution<double> mutationRate{0.0, 1.0};
 
 public:
-    Population(int p_maxGene) {
-        solution = {};
+    Population(int p_maxGene, int p_maxChrom, int p_maxElite, double p_crossover_prob, double p_mutation_prob) {
         avgFitness = 0;
         cumulativeFitness = 0;
         maxGene = p_maxGene;
+        maxChrom = p_maxChrom;
+        maxElite = p_maxElite;
+        crossoverProb = p_crossover_prob;
+        mutationProb = p_mutation_prob;
     }
 
     ~Population() {
@@ -57,7 +59,7 @@ public:
 
     void calcPopulationFitness();
 
-    // sets the elite individuals (according to MAX_ELITE)
+    // sets the elite individuals (according to maxElite)
     void getElite();
     void replaceWorstWithElite();
     void elitism();
@@ -73,6 +75,9 @@ public:
     int getMaxGeneCount() { return maxGene; }
     Chromosome *getBestChromFound();
 
-    string generateSolution();
-    string getSolution() { return solution; }
+//    string generateSolution();
+
+
+
+    void writePopulationToFile();
 };

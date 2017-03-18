@@ -87,12 +87,6 @@
 		<Unit filename="/home/egalea/Downloads/GA_Knapsack/main.cpp">
 			<Option target="GA_Knapsack"/>
 		</Unit>
-		<Unit filename="/home/egalea/Downloads/GA_Knapsack/src/Algorithms.cpp">
-			<Option target="GA_Knapsack"/>
-		</Unit>
-		<Unit filename="/home/egalea/Downloads/GA_Knapsack/src/Algorithms.h">
-			<Option target="GA_Knapsack"/>
-		</Unit>
 		<Unit filename="/home/egalea/Downloads/GA_Knapsack/src/Population.cpp">
 			<Option target="GA_Knapsack"/>
 		</Unit>

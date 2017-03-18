@@ -9,6 +9,8 @@
 /home/egalea/Downloads/GA_Knapsack/./src/Population.h
 iostream
 -
+fstream
+-
 chromosome/Chromosome.h
 /home/egalea/Downloads/GA_Knapsack/./src/chromosome/Chromosome.h
 vector
@@ -45,6 +47,8 @@ iostream
 /home/egalea/Downloads/GA_Knapsack/src/./Population.h
 iostream
 -
+fstream
+-
 chromosome/Chromosome.h
 /home/egalea/Downloads/GA_Knapsack/src/./chromosome/Chromosome.h
 vector
@@ -62,20 +66,6 @@ random
 iostream
 -
 
-/home/egalea/Downloads/GA_Knapsack/src/Algorithms.cpp
-Algorithms.h
-/home/egalea/Downloads/GA_Knapsack/src/Algorithms.h
-
-/home/egalea/Downloads/GA_Knapsack/src/Algorithms.h
-iostream
--
-random
--
-functional
--
-Population.h
-/home/egalea/Downloads/GA_Knapsack/src/Population.h
-
 /home/egalea/Downloads/GA_Knapsack/src/Population.cpp
 algorithm
 -
@@ -86,6 +76,8 @@ bits/unique_ptr.h
 
 /home/egalea/Downloads/GA_Knapsack/src/Population.h
 iostream
+-
+fstream
 -
 chromosome/Chromosome.h
 /home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.h

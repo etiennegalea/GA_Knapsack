@@ -7,12 +7,6 @@ CMakeFiles/GA_Knapsack.dir/main.cpp.o: .././src/knapsack/Item.h
 CMakeFiles/GA_Knapsack.dir/main.cpp.o: .././src/knapsack/ItemList.h
 CMakeFiles/GA_Knapsack.dir/main.cpp.o: ../main.cpp
 
-CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o: ../src/Algorithms.cpp
-CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o: ../src/Algorithms.h
-CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o: ../src/Population.h
-CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o: ../src/chromosome/Chromosome.h
-CMakeFiles/GA_Knapsack.dir/src/Algorithms.cpp.o: ../src/knapsack/Item.h
-
 CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o: ../src/./Population.h
 CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o: ../src/./chromosome/Chromosome.h
 CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o: ../src/./knapsack/Item.h

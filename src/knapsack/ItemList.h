@@ -6,9 +6,6 @@
 
 class ItemList {
 private:
-    static const int KNAPSACK_MAX_WEIGHT = 100;
-
-    static const int MAX_ITEMS = 400; //corresponds to maxGene
     static const int MIN_VALUE_PER_ITEM = 8;
     static const int MAX_VALUE_PER_ITEM = 20;
     static const int MIN_WEIGHT_PER_ITEM = 1;
@@ -16,6 +13,9 @@ private:
 
     vector<Item*> list;
     int maxValueOfItemList;
+
+    int maxKnapsackWeight;
+    int maxItems; //corresponds to maxGene
 
     // Use random_device to generate a seed for Mersenne twister engine.
     std::random_device rd{};
@@ -33,16 +33,17 @@ private:
     } bestChromLog;
 
 public:
-    ItemList(){
-
+    ItemList(int p_maxKnapsackWeight, int p_maxItems){
+        maxKnapsackWeight = p_maxKnapsackWeight;
+        maxItems = p_maxItems;
     }
     ~ItemList(){
         vector<Item*>().swap(list);
         vector<int>().swap(bestChromLog.itemList);
     }
 
-    int getKnapsackMaxWeight() { return KNAPSACK_MAX_WEIGHT; }
-    int getMaxItems() { return MAX_ITEMS; }
+    int getKnapsackMaxWeight() { return maxKnapsackWeight; }
+    int getMaxItems() { return maxItems; }
     void calculateMaxValue();
 
     void printBestChromosomeLog();

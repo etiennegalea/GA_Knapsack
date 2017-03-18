@@ -12,16 +12,14 @@ private:
     vector<int> chrom;
     int maxGene;
     double fitness;
-    string solution;
     // mersenne twister
     std::random_device rd;
     std::mt19937 engine{rd()};
-    std::uniform_int_distribution<int> bin{0,1};
+    std::uniform_int_distribution<int> binary{0,1};
 public:
     // constructor
-    Chromosome(int p_maxGene, string p_solution){
+    Chromosome(int p_maxGene){
         maxGene = p_maxGene;
-        solution = p_solution;
         fitness = 0;
     }
 
@@ -32,8 +30,9 @@ public:
 
 //    int getChromosomeSize() { return chrom.size(); }
     void populateChromosome();
-    void printChromosome();
-    void calcChromosomeFitness();
+    void removeItemFromChromosome();
+    string getChromosome();
+//    void calcChromosomeFitness();
     double getFitness() { return fitness; }
     double setFitness(double p_fitness) { fitness = p_fitness; }
     int getGene(int p_index){ return chrom.at(p_index); }
@@ -41,8 +40,5 @@ public:
     int setGene(int p_index, int p_value){ (chrom.at(p_index) = p_value); }
 
 
-//    bool operator==(const char c, int number) {
-//        return ((int)c == number);
-//    }
 };
 
