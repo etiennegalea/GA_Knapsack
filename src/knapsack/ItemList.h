@@ -26,9 +26,10 @@ private:
 
     struct Log{
         Chromosome* chrom;
-        int index;
-        double maxValue;
-        double maxWeight;
+        int index = 0;
+        double fitness = 0;
+        double maxValue = 0;
+        double maxWeight = 0;
         vector<int> itemList;
     } bestChromLog;
 
@@ -53,6 +54,9 @@ public:
     void printList();
 
     Population* calcPopulationFitness(Population *pop);
+    Chromosome* calcChromosomeFitness(Chromosome* x, int count);
 
     void populateTestList();
+
+    void writePopulationToFile();
 };

@@ -252,14 +252,22 @@ void Population::writePopulationToFile(){
     std::string date(buffer);
 
     // concatenate string date/time with file name
-    string fileName = "population_";
-    string nameDateFile = fileName + date + ".txt";
+    string fileName = "../logs/population_";
+    string nameDateFile = fileName + date + ".dat";
 
     // write to file
     std::ofstream file (nameDateFile);
     if(file.is_open()){
+        file << "Max chromosome length: " << maxGene << "\n";
+        file << "Max population: " << maxChrom << "\n";
+        file << "Max elite: " << maxElite << "\n";
+        file << "Crossover probability: " << crossoverProb << "\n";
+        file << "Mutation probability: " << mutationProb << "\n\n";
+        file << "#\tchromosome\n";
+        int count = 0;
         for(Chromosome* x : pop){
-            file << x->getChromosome() << endl;
+            file << count << "\t" << x->getChromosome() << "\t" << x << "\n";
+            count++;
         }
         file.close();
     }

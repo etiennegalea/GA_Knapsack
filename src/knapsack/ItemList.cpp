@@ -30,69 +30,71 @@ void ItemList::printList(){
 
 Population* ItemList::calcPopulationFitness(Population *pop)
 {
-    double bestFitness = 0;
-    double fitness, calculatedWeight;
+    int count = 0;
+    for (Chromosome* x : pop->getPopulation()){
+        x = calcChromosomeFitness(x, count);
+        count++;
+    }
+    return pop;
+}
+
+Chromosome* ItemList::calcChromosomeFitness(Chromosome* x, int count){
+    double fitness;
     double totalValue, totalWeight;
     bool overweightFlag = false;
     vector<int> temp;
 
-    for (Chromosome* x : pop->getPopulation()){
-        do{
-            totalValue = totalWeight = fitness = 0;
-            overweightFlag = false;
-            for (int i = 0; i < maxItems; ++i) {
-                // if item selected in individual
-                if(x->getGene(i) == 1){
-                    // add value and weight to total
-                    totalValue += list.at(i)->getValue();
-                    totalWeight += list.at(i)->getWeight();
-                    temp.push_back(i);
-                    if(totalWeight > maxKnapsackWeight){
-                        overweightFlag = true;
-                        break;
-                    }
+    do{
+        totalValue = totalWeight = fitness = 0;
+        overweightFlag = false;
+        for (int i = 0; i < maxItems; ++i) {
+            // if item selected in individual
+            if(x->getGene(i) == 1){
+                // add value and weight to total
+                totalValue += list.at(i)->getValue();
+                totalWeight += list.at(i)->getWeight();
+                temp.push_back(i);
+                if(totalWeight > maxKnapsackWeight){
+                    overweightFlag = true;
+                    break;
                 }
             }
-
-            if (overweightFlag){
-                // randomize chromosome
-                x->removeItemFromChromosome();
-            }else{
-                // fitness function
-                // Since weight is the priority, it is assigned a weighting of '2',
-                // while value is assigned a weighting of '1'
-//        fitness = 2*(1/(1+fabs(maxKnapsackWeight - totalWeight))) + 1*(1/(1+maxValueOfItemList-totalValue));
-//                fitness = 2*(1/(1+fabs(maxKnapsackWeight - totalWeight))) + 1*(1/(totalValue));
-
-                fitness = totalValue;
-
-                if(bestFitness < fitness){
-                    bestChromLog.chrom = x;
-                    bestChromLog.maxValue = totalValue;
-                    bestChromLog.maxWeight = totalWeight;
-                    bestChromLog.itemList = temp;
-                }
-                temp.clear();
-                x->setFitness(fitness);
+        }
+        // if knapsack overweight, remove one item from chromosome at random
+        if (overweightFlag){
+            // randomize chromosome
+            x->removeItemFromChromosome();
+        }else{
+            fitness = totalValue;
+            if(bestChromLog.fitness < fitness){
+                bestChromLog.chrom = x;
+                bestChromLog.index = count;
+                bestChromLog.fitness = fitness;
+                bestChromLog.maxValue = totalValue;
+                bestChromLog.maxWeight = totalWeight;
+                bestChromLog.itemList = temp;
             }
-        }while(overweightFlag);
-    }
+            temp.clear();
+            x->setFitness(fitness);
+        }
+    }while(overweightFlag);
+
     vector<int>().swap(temp); // clear allocated memory
-    return pop;
+    return x;
 }
 
 
 void ItemList::printBestChromosomeLog()
 {
-    cout << "Best chromosome" << endl;
-    cout << "Chromosome " << bestChromLog.chrom
-         << " - value: " << bestChromLog.maxValue
-         << " - weight: " << bestChromLog.maxWeight << endl;
+    cout << "\n--- Best chromosome ---" << endl;
+    cout << "\nvalue: " << bestChromLog.maxValue << endl;
+    cout << "weight: " << bestChromLog.maxWeight << endl;
     cout << "Items selected: ";
     for (int i : bestChromLog.itemList){
         cout << i << " ";
     }
-    cout << endl;
+    cout << "\nchromosome " << bestChromLog.index << ": " << bestChromLog.chrom->getChromosome() << endl;
+    cout << "memory location: " << bestChromLog.chrom << endl;
 }
 
 
@@ -104,30 +106,34 @@ void ItemList::calculateMaxValue() {
 }
 
 
+void ItemList::writePopulationToFile(){
 
+    // get time/date as string
+    time_t rawtime;
+    struct tm * timeinfo;
+    char buffer[80];
 
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
 
+    strftime(buffer, sizeof(buffer),"%d-%m-%Y_%I.%M.%S",timeinfo);
+    std::string date(buffer);
 
+    // concatenate string date/time with file name
+    string fileName = "../logs/itemlist_";
+    string nameDateFile = fileName + date + ".dat";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// page break (lmao)
+    // write to file
+    std::ofstream file (nameDateFile);
+    if(file.is_open()){
+        file << "Max knapsack weight: " << maxKnapsackWeight << "\n";
+        file << "Max amount of items: " << maxItems << "\n\n";
+        file << "#\tvalue\tweight\tmemloc\n";
+        int count = 0;
+        for(Item *i : list){
+            file << count << "\t" << i->getValue() << "\t\t" << i->getWeight() << "\t\t" << i << "\n";
+            count++;
+        }
+        file.close();
+    }
+}
