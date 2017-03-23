@@ -14,20 +14,19 @@ int main(){
 
     static const int FITNESS_LIMIT = 700;
     static const int TIME_LIMIT = 20000;
-    static const int GENERATION_LIMIT = 500;
+    static const int GENERATION_LIMIT = 5;
 
     static const int MAX_KNAPSACK_WEIGHT = 10;
-    static const int MAX_ITEMS = 500;
-    static const int MAX_CHROM = 50;
-    static const int MAX_ELITE = 2;
+    static const int MAX_ITEMS = 10;
+    static const int MAX_CHROM = 8;
+    static const int MAX_ELITE = 1;
     static constexpr double CROSSOVER_PROB = 0.8;
     static constexpr double MUTATION_PROB = 0.1;
 
     ItemList* items = new ItemList(MAX_KNAPSACK_WEIGHT, MAX_ITEMS);
     cout << "create random list of items in 'itemlist'" << endl;
-//    items->populateTestList();
     items->populateList();
-
+    items->writePopulationToFile();
     items->calculateMaxValue();
 
     cout << "\n----- printing items -----" << endl;
@@ -37,15 +36,17 @@ int main(){
     Population* pop = new Population(MAX_ITEMS, MAX_CHROM, MAX_ELITE, CROSSOVER_PROB, MUTATION_PROB);
     cout << "\n ----- populating population with random chromosomes -----" << endl;
     pop->populatePopulation();
-    pop->writePopulationToFile();
 
 
-    int maxGeneCount = pop->getMaxGeneCount();
+
 //    double acceptableSolutionLimit = (pop->getMaxGeneCount() - (pop->getMaxGeneCount() * 0.05));
     double acceptableSolutionLimit = (items->getKnapsackMaxWeight() - (items->getKnapsackMaxWeight() * 0.05));
     double maxFitness;
 
     pop = items->calcPopulationFitness(pop);
+    pop->writePopulationToFile();
+    pop->printPopulation();
+
     // termination by generation
     if(TERMINATION_BY_GENERATION || TERMINATION_BY_FITNESS){
         for (int i = 1; i < GENERATION_LIMIT+1; i++){
@@ -59,7 +60,6 @@ int main(){
             pop->mutation();
             pop->elitism();
 
-//            pop->printPopulation();
 
             pop = items->calcPopulationFitness(pop);
             maxFitness = pop->getBestChromFound()->getFitness();
@@ -75,7 +75,7 @@ int main(){
             cout << "\nFitness [" << maxFitness;
             cout << "] found at generation: " << i << endl;
         }
-        items->printList();
+
         items->printBestChromosomeLog();
     }
 

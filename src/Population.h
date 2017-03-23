@@ -75,9 +75,5 @@ public:
     int getMaxGeneCount() { return maxGene; }
     Chromosome *getBestChromFound();
 
-//    string generateSolution();
-
-
-
     void writePopulationToFile();
 };
