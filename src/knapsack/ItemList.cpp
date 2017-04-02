@@ -106,34 +106,33 @@ void ItemList::calculateMaxValue() {
 }
 
 
-void ItemList::writePopulationToFile(){
-
-    // get time/date as string
-    time_t rawtime;
-    struct tm * timeinfo;
-    char buffer[80];
-
-    time(&rawtime);
-    timeinfo = localtime(&rawtime);
-
-    strftime(buffer, sizeof(buffer),"%d-%m-%Y_%I.%M.%S",timeinfo);
-    std::string date(buffer);
-
-    // concatenate string date/time with file name
-    string fileName = "../logs/itemlist_";
-    string nameDateFile = fileName + date + ".dat";
-
+void ItemList::writeItemListToFile(){
     // write to file
-    std::ofstream file (nameDateFile);
+    std::ofstream file ("../logs/itemlist.dat");
     if(file.is_open()){
-        file << "Max knapsack weight: " << maxKnapsackWeight << "\n";
-        file << "Max amount of items: " << maxItems << "\n\n";
-        file << "#\tvalue\tweight\tmemloc\n";
-        int count = 0;
         for(Item *i : list){
-            file << count << "\t" << i->getValue() << "\t\t" << i->getWeight() << "\t\t" << i << "\n";
-            count++;
+            file << i->getValue() << " " << i->getWeight() << " \n";
         }
         file.close();
     }
+    else{
+        cout << "file is closed!" << endl;
+    }
+}
+
+
+void ItemList::readItemListFromFile() {
+    // read from file
+    int value, weight;
+    std::ifstream myfile_read("../logs/itemlist.dat");
+    if(myfile_read.is_open()){
+        while(myfile_read >> value >> weight){
+            cout << value << " " << weight << '\n';
+            list.push_back(new Item(value, weight));
+        }
+        myfile_read.close();
+    }else{
+        cout << "unable to open file";
+    }
+
 }

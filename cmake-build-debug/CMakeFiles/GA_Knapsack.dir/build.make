@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/egalea/clion-2016.3.4/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/egalea/clion-3.5/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/egalea/clion-2016.3.4/bin/cmake/bin/cmake -E remove -f
+RM = /home/egalea/clion-3.5/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/egalea/Downloads/GA_Knapsack
+CMAKE_SOURCE_DIR = /home/egalea/CLionProjects/GA_Knapsack
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/egalea/Downloads/GA_Knapsack/cmake-build-debug
+CMAKE_BINARY_DIR = /home/egalea/CLionProjects/GA_Knapsack/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/GA_Knapsack.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/GA_Knapsack.dir/flags.make
 
 CMakeFiles/GA_Knapsack.dir/main.cpp.o: CMakeFiles/GA_Knapsack.dir/flags.make
 CMakeFiles/GA_Knapsack.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GA_Knapsack.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/main.cpp.o -c /home/egalea/Downloads/GA_Knapsack/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/CLionProjects/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GA_Knapsack.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/main.cpp.o -c /home/egalea/CLionProjects/GA_Knapsack/main.cpp
 
 CMakeFiles/GA_Knapsack.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GA_Knapsack.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/Downloads/GA_Knapsack/main.cpp > CMakeFiles/GA_Knapsack.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/CLionProjects/GA_Knapsack/main.cpp > CMakeFiles/GA_Knapsack.dir/main.cpp.i
 
 CMakeFiles/GA_Knapsack.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GA_Knapsack.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/Downloads/GA_Knapsack/main.cpp -o CMakeFiles/GA_Knapsack.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/CLionProjects/GA_Knapsack/main.cpp -o CMakeFiles/GA_Knapsack.dir/main.cpp.s
 
 CMakeFiles/GA_Knapsack.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/GA_Knapsack.dir/main.cpp.o.provides.build: CMakeFiles/GA_Knapsack.dir
 
 CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o: CMakeFiles/GA_Knapsack.dir/flags.make
 CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o: ../src/Population.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o -c /home/egalea/Downloads/GA_Knapsack/src/Population.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/CLionProjects/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o -c /home/egalea/CLionProjects/GA_Knapsack/src/Population.cpp
 
 CMakeFiles/GA_Knapsack.dir/src/Population.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GA_Knapsack.dir/src/Population.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/Downloads/GA_Knapsack/src/Population.cpp > CMakeFiles/GA_Knapsack.dir/src/Population.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/CLionProjects/GA_Knapsack/src/Population.cpp > CMakeFiles/GA_Knapsack.dir/src/Population.cpp.i
 
 CMakeFiles/GA_Knapsack.dir/src/Population.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GA_Knapsack.dir/src/Population.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/Downloads/GA_Knapsack/src/Population.cpp -o CMakeFiles/GA_Knapsack.dir/src/Population.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/CLionProjects/GA_Knapsack/src/Population.cpp -o CMakeFiles/GA_Knapsack.dir/src/Population.cpp.s
 
 CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o.provides.build: CMakeFiles/GA_Kn
 
 CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o: CMakeFiles/GA_Knapsack.dir/flags.make
 CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o: ../src/chromosome/Chromosome.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o -c /home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/CLionProjects/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o -c /home/egalea/CLionProjects/GA_Knapsack/src/chromosome/Chromosome.cpp
 
 CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.cpp > CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/CLionProjects/GA_Knapsack/src/chromosome/Chromosome.cpp > CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.i
 
 CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.cpp -o CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/CLionProjects/GA_Knapsack/src/chromosome/Chromosome.cpp -o CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.s
 
 CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o.provides.build: CMake
 
 CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o: CMakeFiles/GA_Knapsack.dir/flags.make
 CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o: ../src/knapsack/Item.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o -c /home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/CLionProjects/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o -c /home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.cpp
 
 CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.cpp > CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.cpp > CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.i
 
 CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.cpp -o CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.cpp -o CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.s
 
 CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o.provides.build: CMakeFiles/GA
 
 CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o: CMakeFiles/GA_Knapsack.dir/flags.make
 CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o: ../src/knapsack/ItemList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o -c /home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/egalea/CLionProjects/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o -c /home/egalea/CLionProjects/GA_Knapsack/src/knapsack/ItemList.cpp
 
 CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.cpp > CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/egalea/CLionProjects/GA_Knapsack/src/knapsack/ItemList.cpp > CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.i
 
 CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.cpp -o CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/egalea/CLionProjects/GA_Knapsack/src/knapsack/ItemList.cpp -o CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.s
 
 CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o.requires:
 
@@ -195,7 +195,7 @@ GA_Knapsack: CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o
 GA_Knapsack: CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o
 GA_Knapsack: CMakeFiles/GA_Knapsack.dir/build.make
 GA_Knapsack: CMakeFiles/GA_Knapsack.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable GA_Knapsack"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/egalea/CLionProjects/GA_Knapsack/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable GA_Knapsack"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GA_Knapsack.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -216,6 +216,6 @@ CMakeFiles/GA_Knapsack.dir/clean:
 .PHONY : CMakeFiles/GA_Knapsack.dir/clean
 
 CMakeFiles/GA_Knapsack.dir/depend:
-	cd /home/egalea/Downloads/GA_Knapsack/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/egalea/Downloads/GA_Knapsack /home/egalea/Downloads/GA_Knapsack /home/egalea/Downloads/GA_Knapsack/cmake-build-debug /home/egalea/Downloads/GA_Knapsack/cmake-build-debug /home/egalea/Downloads/GA_Knapsack/cmake-build-debug/CMakeFiles/GA_Knapsack.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/egalea/CLionProjects/GA_Knapsack/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/egalea/CLionProjects/GA_Knapsack /home/egalea/CLionProjects/GA_Knapsack /home/egalea/CLionProjects/GA_Knapsack/cmake-build-debug /home/egalea/CLionProjects/GA_Knapsack/cmake-build-debug /home/egalea/CLionProjects/GA_Knapsack/cmake-build-debug/CMakeFiles/GA_Knapsack.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/GA_Knapsack.dir/depend
 

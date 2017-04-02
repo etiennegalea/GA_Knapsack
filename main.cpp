@@ -25,8 +25,9 @@ int main(){
 
     ItemList* items = new ItemList(MAX_KNAPSACK_WEIGHT, MAX_ITEMS);
     cout << "create random list of items in 'itemlist'" << endl;
-    items->populateList();
-    items->writePopulationToFile();
+//    items->populateList();
+//    items->writeItemListToFile();
+    items->readItemListFromFile();
     items->calculateMaxValue();
 
     cout << "\n----- printing items -----" << endl;

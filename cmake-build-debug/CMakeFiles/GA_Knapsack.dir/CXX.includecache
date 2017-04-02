@@ -6,123 +6,127 @@
 
 #IncludeRegexTransform: 
 
-/home/egalea/Downloads/GA_Knapsack/./src/Population.h
+/home/egalea/CLionProjects/GA_Knapsack/./src/Population.h
 iostream
 -
 fstream
 -
 chromosome/Chromosome.h
-/home/egalea/Downloads/GA_Knapsack/./src/chromosome/Chromosome.h
+/home/egalea/CLionProjects/GA_Knapsack/./src/chromosome/Chromosome.h
 vector
 -
 
-/home/egalea/Downloads/GA_Knapsack/./src/chromosome/Chromosome.h
+/home/egalea/CLionProjects/GA_Knapsack/./src/chromosome/Chromosome.h
 iostream
 -
 random
 -
 ../knapsack/Item.h
-/home/egalea/Downloads/GA_Knapsack/./src/knapsack/Item.h
+/home/egalea/CLionProjects/GA_Knapsack/./src/knapsack/Item.h
 
-/home/egalea/Downloads/GA_Knapsack/./src/knapsack/Item.h
+/home/egalea/CLionProjects/GA_Knapsack/./src/knapsack/Item.h
 iostream
 -
 
-/home/egalea/Downloads/GA_Knapsack/./src/knapsack/ItemList.h
+/home/egalea/CLionProjects/GA_Knapsack/./src/knapsack/ItemList.h
 Item.h
-/home/egalea/Downloads/GA_Knapsack/./src/knapsack/Item.h
+/home/egalea/CLionProjects/GA_Knapsack/./src/knapsack/Item.h
 ../chromosome/Chromosome.h
-/home/egalea/Downloads/GA_Knapsack/./src/chromosome/Chromosome.h
+/home/egalea/CLionProjects/GA_Knapsack/./src/chromosome/Chromosome.h
 ../Population.h
-/home/egalea/Downloads/GA_Knapsack/./src/Population.h
+/home/egalea/CLionProjects/GA_Knapsack/./src/Population.h
+sstream
+-
 
-/home/egalea/Downloads/GA_Knapsack/main.cpp
+/home/egalea/CLionProjects/GA_Knapsack/main.cpp
 iostream
 -
 ./src/Population.h
-/home/egalea/Downloads/GA_Knapsack/./src/Population.h
+/home/egalea/CLionProjects/GA_Knapsack/./src/Population.h
 ./src/knapsack/ItemList.h
-/home/egalea/Downloads/GA_Knapsack/./src/knapsack/ItemList.h
+/home/egalea/CLionProjects/GA_Knapsack/./src/knapsack/ItemList.h
 
-/home/egalea/Downloads/GA_Knapsack/src/./Population.h
+/home/egalea/CLionProjects/GA_Knapsack/src/./Population.h
 iostream
 -
 fstream
 -
 chromosome/Chromosome.h
-/home/egalea/Downloads/GA_Knapsack/src/./chromosome/Chromosome.h
+/home/egalea/CLionProjects/GA_Knapsack/src/./chromosome/Chromosome.h
 vector
 -
 
-/home/egalea/Downloads/GA_Knapsack/src/./chromosome/Chromosome.h
+/home/egalea/CLionProjects/GA_Knapsack/src/./chromosome/Chromosome.h
 iostream
 -
 random
 -
 ../knapsack/Item.h
-/home/egalea/Downloads/GA_Knapsack/src/./knapsack/Item.h
+/home/egalea/CLionProjects/GA_Knapsack/src/./knapsack/Item.h
 
-/home/egalea/Downloads/GA_Knapsack/src/./knapsack/Item.h
+/home/egalea/CLionProjects/GA_Knapsack/src/./knapsack/Item.h
 iostream
 -
 
-/home/egalea/Downloads/GA_Knapsack/src/Population.cpp
+/home/egalea/CLionProjects/GA_Knapsack/src/Population.cpp
 algorithm
 -
 bits/unique_ptr.h
 -
 ./Population.h
-/home/egalea/Downloads/GA_Knapsack/src/./Population.h
+/home/egalea/CLionProjects/GA_Knapsack/src/./Population.h
 
-/home/egalea/Downloads/GA_Knapsack/src/Population.h
+/home/egalea/CLionProjects/GA_Knapsack/src/Population.h
 iostream
 -
 fstream
 -
 chromosome/Chromosome.h
-/home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.h
+/home/egalea/CLionProjects/GA_Knapsack/src/chromosome/Chromosome.h
 vector
 -
 
-/home/egalea/Downloads/GA_Knapsack/src/chromosome/./Chromosome.h
+/home/egalea/CLionProjects/GA_Knapsack/src/chromosome/./Chromosome.h
 iostream
 -
 random
 -
 ../knapsack/Item.h
-/home/egalea/Downloads/GA_Knapsack/src/chromosome/knapsack/Item.h
+/home/egalea/CLionProjects/GA_Knapsack/src/chromosome/knapsack/Item.h
 
-/home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.cpp
+/home/egalea/CLionProjects/GA_Knapsack/src/chromosome/Chromosome.cpp
 sstream
 -
 ./Chromosome.h
-/home/egalea/Downloads/GA_Knapsack/src/chromosome/./Chromosome.h
+/home/egalea/CLionProjects/GA_Knapsack/src/chromosome/./Chromosome.h
 
-/home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.h
+/home/egalea/CLionProjects/GA_Knapsack/src/chromosome/Chromosome.h
 iostream
 -
 random
 -
 ../knapsack/Item.h
-/home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.h
+/home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.h
 
-/home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.cpp
+/home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.cpp
 Item.h
-/home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.h
+/home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.h
 
-/home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.h
+/home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.h
 iostream
 -
 
-/home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.cpp
+/home/egalea/CLionProjects/GA_Knapsack/src/knapsack/ItemList.cpp
 ItemList.h
-/home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.h
+/home/egalea/CLionProjects/GA_Knapsack/src/knapsack/ItemList.h
 
-/home/egalea/Downloads/GA_Knapsack/src/knapsack/ItemList.h
+/home/egalea/CLionProjects/GA_Knapsack/src/knapsack/ItemList.h
 Item.h
-/home/egalea/Downloads/GA_Knapsack/src/knapsack/Item.h
+/home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.h
 ../chromosome/Chromosome.h
-/home/egalea/Downloads/GA_Knapsack/src/chromosome/Chromosome.h
+/home/egalea/CLionProjects/GA_Knapsack/src/chromosome/Chromosome.h
 ../Population.h
-/home/egalea/Downloads/GA_Knapsack/src/Population.h
+/home/egalea/CLionProjects/GA_Knapsack/src/Population.h
+sstream
+-
 

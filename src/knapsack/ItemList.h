@@ -3,6 +3,7 @@
 #include "Item.h"
 #include "../chromosome/Chromosome.h"
 #include "../Population.h"
+#include <sstream>
 
 class ItemList {
 private:
@@ -58,5 +59,6 @@ public:
 
     void populateTestList();
 
-    void writePopulationToFile();
+    void writeItemListToFile();
+    void readItemListFromFile();
 };
