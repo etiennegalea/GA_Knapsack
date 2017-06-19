@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/GA_Knapsack.dir/main.cpp.o"
   "CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o"
   "CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o"
-  "CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o"
   "CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o"
   "GA_Knapsack.pdb"
   "GA_Knapsack"

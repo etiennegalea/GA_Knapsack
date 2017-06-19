@@ -19,7 +19,7 @@ void ItemList::populateTestList(){
 }
 
 void ItemList::printList(){
-    std::cout << "---- ITEMS IN LIST ----" << endl;
+    std::cout << ":::: ITEMS IN LIST ::::\n" << endl;
     for (int item = 0; item < maxItems; ++item) {
         std::cout << item << ":\t";
         std::cout << "€" << list.at(item)->getValue()
@@ -86,7 +86,7 @@ Chromosome* ItemList::calcChromosomeFitness(Chromosome* x, int count){
 
 void ItemList::printBestChromosomeLog()
 {
-    cout << "\n--- Best chromosome ---" << endl;
+    cout << "\n:::::::: Best chromosome ::::::::" << endl;
     cout << "\nvalue: " << bestChromLog.maxValue << endl;
     cout << "weight: " << bestChromLog.maxWeight << endl;
     cout << "Items selected: ";
@@ -127,7 +127,7 @@ void ItemList::readItemListFromFile() {
     std::ifstream myfile_read("../logs/itemlist.dat");
     if(myfile_read.is_open()){
         while(myfile_read >> value >> weight){
-            cout << value << " " << weight << '\n';
+    // cout << "€" << value << " " << weight << "kg" << '\n';
             list.push_back(new Item(value, weight));
         }
         myfile_read.close();

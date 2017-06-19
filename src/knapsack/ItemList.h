@@ -7,7 +7,7 @@
 
 class ItemList {
 private:
-    static const int MIN_VALUE_PER_ITEM = 8;
+    static const int MIN_VALUE_PER_ITEM = 5;
     static const int MAX_VALUE_PER_ITEM = 20;
     static const int MIN_WEIGHT_PER_ITEM = 1;
     static const int MAX_WEIGHT_PER_ITEM = 5;
@@ -16,6 +16,7 @@ private:
     int maxValueOfItemList;
 
     int maxKnapsackWeight;
+    int maxKnapsackValue;
     int maxItems; //corresponds to maxGene
 
     // Use random_device to generate a seed for Mersenne twister engine.
@@ -45,6 +46,7 @@ public:
     }
 
     int getKnapsackMaxWeight() { return maxKnapsackWeight; }
+    int getKnapsackMaxValue() { return maxKnapsackValue; }
     int getMaxItems() { return maxItems; }
     void calculateMaxValue();
 

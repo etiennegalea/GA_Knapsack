@@ -15,9 +15,6 @@ CMakeFiles/GA_Knapsack.dir/src/Population.cpp.o
 CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.o
  /home/egalea/CLionProjects/GA_Knapsack/src/chromosome/./Chromosome.h
  /home/egalea/CLionProjects/GA_Knapsack/src/chromosome/Chromosome.cpp
-CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o
- /home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.cpp
- /home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.h
 CMakeFiles/GA_Knapsack.dir/src/knapsack/ItemList.cpp.o
  /home/egalea/CLionProjects/GA_Knapsack/src/Population.h
  /home/egalea/CLionProjects/GA_Knapsack/src/chromosome/Chromosome.h

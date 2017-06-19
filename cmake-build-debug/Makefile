@@ -204,33 +204,6 @@ src/chromosome/Chromosome.cpp.s:
 	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/src/chromosome/Chromosome.cpp.s
 .PHONY : src/chromosome/Chromosome.cpp.s
 
-src/knapsack/Item.o: src/knapsack/Item.cpp.o
-
-.PHONY : src/knapsack/Item.o
-
-# target to build an object file
-src/knapsack/Item.cpp.o:
-	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.o
-.PHONY : src/knapsack/Item.cpp.o
-
-src/knapsack/Item.i: src/knapsack/Item.cpp.i
-
-.PHONY : src/knapsack/Item.i
-
-# target to preprocess a source file
-src/knapsack/Item.cpp.i:
-	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.i
-.PHONY : src/knapsack/Item.cpp.i
-
-src/knapsack/Item.s: src/knapsack/Item.cpp.s
-
-.PHONY : src/knapsack/Item.s
-
-# target to generate assembly for a file
-src/knapsack/Item.cpp.s:
-	$(MAKE) -f CMakeFiles/GA_Knapsack.dir/build.make CMakeFiles/GA_Knapsack.dir/src/knapsack/Item.cpp.s
-.PHONY : src/knapsack/Item.cpp.s
-
 src/knapsack/ItemList.o: src/knapsack/ItemList.cpp.o
 
 .PHONY : src/knapsack/ItemList.o
@@ -276,9 +249,6 @@ help:
 	@echo "... src/chromosome/Chromosome.o"
 	@echo "... src/chromosome/Chromosome.i"
 	@echo "... src/chromosome/Chromosome.s"
-	@echo "... src/knapsack/Item.o"
-	@echo "... src/knapsack/Item.i"
-	@echo "... src/knapsack/Item.s"
 	@echo "... src/knapsack/ItemList.o"
 	@echo "... src/knapsack/ItemList.i"
 	@echo "... src/knapsack/ItemList.s"

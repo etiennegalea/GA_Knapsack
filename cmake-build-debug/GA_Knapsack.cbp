@@ -99,12 +99,6 @@
 		<Unit filename="/home/egalea/CLionProjects/GA_Knapsack/src/chromosome/Chromosome.h">
 			<Option target="GA_Knapsack"/>
 		</Unit>
-		<Unit filename="/home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.cpp">
-			<Option target="GA_Knapsack"/>
-		</Unit>
-		<Unit filename="/home/egalea/CLionProjects/GA_Knapsack/src/knapsack/Item.h">
-			<Option target="GA_Knapsack"/>
-		</Unit>
 		<Unit filename="/home/egalea/CLionProjects/GA_Knapsack/src/knapsack/ItemList.cpp">
 			<Option target="GA_Knapsack"/>
 		</Unit>
