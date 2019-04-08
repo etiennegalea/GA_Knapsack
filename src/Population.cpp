@@ -16,15 +16,15 @@ void Population::populatePopulation(){
 void Population::printPopulation(){
     int i = 0;
     for(Chromosome* x : pop){
-        cout << "Chromosome " << i << " [" << getPop(i)->getFitness()
-             << "]: ";
+        cout << "Chromosome " << i << " [" << getPop(i)->getFitness() << "]:\t";
         cout << getPop(i)->getChromosome() << endl;
         i++;
     }
+    double avgFitness = calcPopulationFitness();
     cout << "\nAverage fitness: " << avgFitness << "\n" << endl;
 }
 
-void Population::calcPopulationFitness() {
+double Population::calcPopulationFitness() {
     avgFitness = 0;
     cumulativeFitness = 0;
     int maxChrom = 0;
@@ -33,6 +33,7 @@ void Population::calcPopulationFitness() {
         cumulativeFitness += x->getFitness();
     }
     avgFitness = (cumulativeFitness / maxChrom);
+    return avgFitness;
 }
 
 Chromosome* Population::getBestChromFound(){
@@ -60,7 +61,7 @@ void Population::getElite() {
     // iterate through out the list of chromosomes to find elite
     for (int i = 0; i < maxElite; ++i) {
         fittest = 0;
-        skipIndex[i] = NULL;   // set value out of bounds
+        skipIndex[i] = 0;   // set value out of bounds
         skipIndexFlag = false;
         for (int index = 0; index < maxChrom; ++index) {
             if ((fittest < getPop(index)->getFitness())){
@@ -90,7 +91,7 @@ void Population::replaceWorstWithElite() {
     bool skipIndexFlag;
     for (int i = 0; i < maxElite; ++i) {
         unfit = maxGene; // start with max fitness
-        skipIndex[i] = NULL;
+        skipIndex[i] = 0;
         skipIndexFlag = false;
         for (int index = 0; index < maxChrom; ++index) {
             if (unfit > getPop(index)->getFitness()){

@@ -22,7 +22,7 @@ void ItemList::printList(){
     std::cout << ":::: ITEMS IN LIST ::::\n" << endl;
     for (int item = 0; item < maxItems; ++item) {
         std::cout << item << ":\t";
-        std::cout << "€" << list.at(item)->getValue()
+        std::cout << "$" << list.at(item)->getValue()
                   << "\t\t" << list.at(item)->getWeight() << "kg"
                   << endl;
     }

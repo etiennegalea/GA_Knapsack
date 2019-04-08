@@ -87,20 +87,24 @@ int main(){
             pop->mutation();
             pop->elitism();
 
-
             pop = items->calcPopulationFitness(pop);
             maxFitness = pop->getBestChromFound()->getFitness();
-//            if(maxFitness >= acceptableSolutionLimit){
-//                cout << "Fitness [" << maxFitness
-//                     << "] found at generation: "
-//                     << i << "\n" << endl;
-//                pop->getBestChromFound()->getChromosome();
-//                 print best chromosome Log
-//                items->printBestChromosomeLog();
-//                break;
-//            }
-            cout << "Generation [" << i;
-            cout << "] - Max Fitness -> " << maxFitness << endl;
+
+            /*
+             * Prints fitness found per generation
+             *
+            if(maxFitness >= acceptableSolutionLimit){
+                cout << "Fitness [" << maxFitness
+                     << "] found at generation: "
+                     << i << "\n" << endl;
+                pop->getBestChromFound()->getChromosome();
+                 print best chromosome Log
+                items->printBestChromosomeLog();
+                break;
+            }
+            */
+
+            cout << "Generation [" << i << "] - Max Fitness -> " << maxFitness << endl;
         }
         items->printBestChromosomeLog();
     }

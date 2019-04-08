@@ -4,6 +4,7 @@
 #include <fstream>
 #include "chromosome/Chromosome.h"
 #include <vector>
+#include "time.h"
 
 using std::vector;
 using std::string;
@@ -57,7 +58,7 @@ public:
     void printPopulation();
     vector<Chromosome*> getPopulation() { return pop; }
 
-    void calcPopulationFitness();
+    double calcPopulationFitness();
 
     // sets the elite individuals (according to maxElite)
     void getElite();
